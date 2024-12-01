@@ -1,0 +1,2 @@
+{ programs.nano.enable = false; }
+
