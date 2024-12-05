@@ -5,9 +5,10 @@
     ./extra
     ./opentabletdriver
     ./nvidia
-    ./fzf
+    # ./fzf
     ./wireshark
     ./tmux
+	./opengl
   ];
 }
 

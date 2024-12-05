@@ -18,8 +18,8 @@ wideriver \ --layout            left        \
 --count-wide-left               2           \
 --ratio-wide                    0.35        \
 --no-smart-gaps                             \
---inner-gaps                    6           \
---outer-gaps                    3           \
+--inner-gaps                    0           \
+--outer-gaps                    0           \
 --border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \

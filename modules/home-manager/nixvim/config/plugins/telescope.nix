@@ -64,7 +64,7 @@
                     action = "highlights";
                     options.desc = "Search Highlight Groups";
                 };
-                "gr" = {
+                "<leader>r" = {
                     action = "lsp_references";
                     options.desc = "LSP references";
                 };

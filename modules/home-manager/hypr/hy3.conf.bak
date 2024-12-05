@@ -126,8 +126,8 @@ bind = $mainMod SHIFT, C, killactive,
 
 
 # bind = $mainMod, Space, settiled,
-	 bind = $mainMod, F, fullscreen, 2
-	 bind = $mainMod SHIFT, F, fullscreen, 1
+	 bind = $mainMod CONTROL, F, fullscreen, 2
+	 bind = $mainMod CONTROL, M, fullscreen, 1
 	 bind = $mainMod, Space, togglefloating
 
 	 bind = $mainMod, S, togglespecialworkspace, magic

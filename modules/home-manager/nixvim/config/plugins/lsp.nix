@@ -9,11 +9,11 @@
 # nil-ls.enable = true;
             nixd.enable = true;
             marksman.enable = true;
-            zls.enable = true;
-# lua-ls.enable =true;
-            yamlls.enable = true;
+			zls.enable = true;
+			lua_ls.enable =true;
+			yamlls.enable = true;
 # hls.enable = true;
-            cssls.enable = true;
+			cssls.enable = true;
             cmake.enable = true;
             bashls.enable = true;
             arduino_language_server.enable = true;

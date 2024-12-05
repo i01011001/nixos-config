@@ -1,5 +1,5 @@
 
-PS1="%B%{$fg[while]%}[ %1d ] %# %b"
+PS1="%B%{$fg[white]%}[ %1d ] %# %b"
 
 # History in cache directory:
 # HISTFILE="$HOME/.cache/zsh/history"             # Save 100000 lines of history
@@ -62,22 +62,20 @@ export CMAKE_EXPORT_COMPILE_COMMANDS=1
 export IDF_PATH="$HOME/code/esp/idf/esp-idf"
 export RMAKER_PATH="$HOME/code/esp/idf/esp-components/esp-rainmaker/"
 
-export FZF_DEFAULT_COMMAND='fd --type file --hidden '
-export FZF_DEFAULT_OPTS='--height 40% --info=inline --layout=reverse --no-scrollbar --no-separator --highlight-line  --marker="#" --color=bw'
 
-autoload -U add-zsh-hook
-
-function osc7-pwd() {
-    emulate -L zsh # also sets localoptions for us
-    setopt extendedglob
-    local LC_ALL=C
-    printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
-}
-
-function chpwd-osc7-pwd() {
-    (( ZSH_SUBSHELL )) || osc7-pwd
-}
-
-add-zsh-hook -Uz chpwd chpwd-osc7-pwd
-
+# autoload -U add-zsh-hook
 #
+# function osc7-pwd() {
+#     emulate -L zsh # also sets localoptions for us
+#     setopt extendedglob
+#     local LC_ALL=C
+#     printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
+# }
+#
+# function chpwd-osc7-pwd() {
+#     (( ZSH_SUBSHELL )) || osc7-pwd
+# }
+#
+# add-zsh-hook -Uz chpwd chpwd-osc7-pwd
+#
+# #

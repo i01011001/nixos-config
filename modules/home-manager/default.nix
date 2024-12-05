@@ -6,7 +6,7 @@
 			./ripgrep
 			./fd
 			./fzf
-			./shell
+			./zsh
 			./cursor
 			./gtk
 			./yazi
@@ -15,8 +15,11 @@
 			./git
 			./tofi
 			./mako
-			./hypr
-# ./river
+			# ./sway
+			# ./hypr
+# ./wezterm
 # ./foot
+# ./river
+			./qutebrowser
 	];
 							}

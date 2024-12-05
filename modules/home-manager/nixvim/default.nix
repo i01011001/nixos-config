@@ -36,7 +36,7 @@ in {
     enable = true;
     defaultEditor = true;
     diagnostics = { float = { border = "rounded"; }; };
-	# package= inputs.neovim-nightly.packages.${pkgs.system}.default;
+	package= inputs.neovim-nightly.packages.${pkgs.system}.default;
 
     performance = {
       byteCompileLua = {
@@ -50,10 +50,10 @@ in {
 		(pkgs.vimUtils.buildVimPlugin {
 				name = "peek";
 				src = pkgs.fetchFromGitHub {
-				owner = "toppair";
-				repo = "peek.nvim";
-				rev = "master";
-				hash = "sha256-hGIPxHwTSXTHFJ3JiVATMjEmoFhZ87fWElj1AMPMbQU=";
+					owner = "toppair";
+					repo = "peek.nvim";
+					rev = "master";
+					hash = "sha256-hGIPxHwTSXTHFJ3JiVATMjEmoFhZ87fWElj1AMPMbQU=";
 				};
 				})
 		# (pkgs.vimUtils.buildVimPlugin {
@@ -65,6 +65,15 @@ in {
 		# 		hash = "sha256-4D4jB9CmamMAdpEodw4MdDyJVU6EMsh8P4gLs7p4E40=";
 		# 		};
 		# 		})
+		(pkgs.vimUtils.buildVimPlugin {
+			name = "typr";
+			src =  pkgs.fetchFromGitHub {
+					owner = "nvzone";
+					repo = "typr";
+					rev = "master";
+					hash = "sha256-N1V1nktgckvZa+Q5/YNoMFd1yKPwJr+QxXUhiJAV8c0=";
+				};
+			})
     ];   
 
     extraConfigLua = '' 

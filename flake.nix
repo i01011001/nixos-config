@@ -14,19 +14,24 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 
-# neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+		# wezterm-flake = {
+		# 	url = "github:wez/wezterm/main?dir=nix";
+		# 	inputs.nixpkgs.follows = "nixpkgs";
+		# };
+
+		neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
 # gBar.url = "github:i01011001/gBar";
 
-		hyprland.url = "github:hyprwm/Hyprland";
+		# hyprland.url = "github:hyprwm/Hyprland";
 # hy3 = {
 #     url = "github:outfoxxed/hy3";
 #     inputs.hyprland.follows = "hyprland";
 # };
-		split-monitor-workspaces = {
-			url = "github:Duckonaut/split-monitor-workspaces";
-			inputs.hyprland.follows = "hyprland";
-		};
+		# split-monitor-workspaces = {
+		# 	url = "github:Duckonaut/split-monitor-workspaces";
+		# 	inputs.hyprland.follows = "hyprland";
+		# };
 	};
 
 	outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -41,7 +46,6 @@
 			modules = [
 				./nixos
 					./overlays
-
 					home-manager.nixosModules.home-manager
 					{
 						home-manager = {

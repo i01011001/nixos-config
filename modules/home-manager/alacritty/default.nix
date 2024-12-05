@@ -4,8 +4,8 @@
     settings = {
       window = {
         padding = {
-          x = 3;
-          y = 4;
+          x = 5;
+          y = 5;
         };
         decorations = "None";
       };

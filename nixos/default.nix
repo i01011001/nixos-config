@@ -129,6 +129,12 @@ services.resolved.enable = false;
 # Enable sound.
     security.rtkit.enable = true;
 
+	
+security.pam.loginLimits = [
+  { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+];
+security.polkit.enable = true;
+
     services = {
         pipewire = {
             enable = true;
