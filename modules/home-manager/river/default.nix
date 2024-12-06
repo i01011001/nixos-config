@@ -24,14 +24,10 @@
           # "Super+Shift F" = "spawn floorp";
           "Super+Shift Return" = "spawn alacritty";
           "Super R" = "spawn tofi-drun";
-          "Super+Control B" =
-            "spawn 'notify-send \"Capacity\" \"`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`\"'";
-          "Super+Control V" = ''
-            spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' '';
-          "Super+Control C" =
-            "spawn 'notify-send  \"`date +%H:%M`\" \"`date +%A` `date +%d`. `date +%B`\" '";
-          "Super+Control X" =
-            "spawn 'notify-send \"Brightness\"  \"`brightnessctl g`\"'";
+          "Super+Control B" = "spawn 'notify-send \"Capacity\" \"`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`\"'";
+          "Super+Control V" = ''spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' '';
+          "Super+Control C" = "spawn 'notify-send  \"`date +%H:%M`\" \"`date +%A` `date +%d`. `date +%B`\" '";
+          "Super+Control X" = "spawn 'notify-send \"Brightness\"  \"`brightnessctl g`\"'";
           "Super J" = "focus-view next";
           "Super K" = "focus-view previous";
           "Super+Shift J" = "swap next";

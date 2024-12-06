@@ -1,5 +1,15 @@
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  hardware.graphics = {
+    enable = true;
+    # extraPackages = [
+    # 	pkgs.mesa.drivers
+    # ];
+  };
 
-{ config, lib, pkgs, ... }: {
-  # Enable OpenGL
-  hardware.graphics = { enable = true; };
 }

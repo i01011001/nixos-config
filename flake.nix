@@ -11,27 +11,21 @@
 
 		nixvim = {
 			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-
-		# wezterm-flake = {
-		# 	url = "github:wez/wezterm/main?dir=nix";
-		# 	inputs.nixpkgs.follows = "nixpkgs";
-		# };
+			inputs.nixpkgs.follows = "nixpkgs"; };
 
 		neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-
+		
 # gBar.url = "github:i01011001/gBar";
 
-		# hyprland.url = "github:hyprwm/Hyprland";
+# hyprland.url = "github:hyprwm/Hyprland";
 # hy3 = {
 #     url = "github:outfoxxed/hy3";
 #     inputs.hyprland.follows = "hyprland";
 # };
-		# split-monitor-workspaces = {
-		# 	url = "github:Duckonaut/split-monitor-workspaces";
-		# 	inputs.hyprland.follows = "hyprland";
-		# };
+# split-monitor-workspaces = {
+# 	url = "github:Duckonaut/split-monitor-workspaces";
+# 	inputs.hyprland.follows = "hyprland";
+# };
 	};
 
 	outputs = { nixpkgs, home-manager, ... }@inputs:
@@ -41,6 +35,7 @@
 # system = "x86_64-linux";
 # pkgs = nixpkgs.legacyPackages.${system};
 	in {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
 		nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
 			specialArgs = { inherit inputs; };
 			modules = [

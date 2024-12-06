@@ -1,4 +1,4 @@
 {
-	pkgs
+  pkgs,
 }:
-  pkgs.writeShellScriptBin "volumemute" ''wpctl set-mute @DEFAULT_SINK@ toggle''
+pkgs.writeShellScriptBin "volumemute" ''wpctl set-mute @DEFAULT_SINK@ toggle''

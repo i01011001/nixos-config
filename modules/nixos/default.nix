@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   imports = [
     ./systemPackages
     ./nix-ld
@@ -8,7 +9,6 @@
     # ./fzf
     ./wireshark
     ./tmux
-	./opengl
+    ./opengl
   ];
 }
-

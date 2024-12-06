@@ -15,20 +15,24 @@
           style = "Regular";
         };
         size = 11;
-        offset = { y = -2; };
+        offset = {
+          y = -2;
+        };
       };
       keyboard = {
-        bindings = [{
-          key = "N";
-          mods = "Control|Shift";
-          action = "SpawnNewInstance";
-        }];
+        bindings = [
+          {
+            key = "N";
+            mods = "Control|Shift";
+            action = "SpawnNewInstance";
+          }
+        ];
       };
       colors = {
-        primary = { 
-            background = "#000000"; 
-            foreground = "#d0d0d0"; 
-            };
+        primary = {
+          background = "#000000";
+          foreground = "#d0d0d0";
+        };
         normal = {
           black = "#303030";
           red = "#bf656e";

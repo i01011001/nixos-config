@@ -3,7 +3,9 @@
     enable = true;
     settings = {
       delay = 320;
-      win = { border = "rounded"; };
+      win = {
+        border = "rounded";
+      };
       preset = "modern";
     };
   };

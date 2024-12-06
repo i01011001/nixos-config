@@ -1,7 +1,5 @@
-
-
 {
-    programs.nixvim.plugins.neogit = {
-        enable = true;
-    };
+  programs.nixvim.plugins.neogit = {
+    enable = true;
+  };
 }

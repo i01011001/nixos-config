@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   environment.systemPackages = with pkgs; [
 
     # (import ../../../customs/pkgs/river-ultitile {inherit pkgs;})
@@ -6,16 +7,16 @@
     (import ../../../customs/pkgs/modpoll { inherit pkgs; })
     (import ../../../customs/pkgs/diagslave { inherit pkgs; })
 
-	(import ../../../customs/pkgs/control/volumeup.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/control/volumedown.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/control/volumemute.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/control/brightnessup.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/control/brightnessdown.nix {inherit pkgs;})
+    (import ../../../customs/pkgs/control/volumeup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/control/volumedown.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/control/volumemute.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/control/brightnessup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/control/brightnessdown.nix { inherit pkgs; })
 
-	(import ../../../customs/pkgs/notify/volume.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/notify/time.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/notify/battery.nix {inherit pkgs;})
-	(import ../../../customs/pkgs/notify/brightness.nix {inherit pkgs;})
+    (import ../../../customs/pkgs/notify/volume.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/notify/time.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/notify/battery.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/notify/brightness.nix { inherit pkgs; })
 
     websocat
     mosquitto
@@ -48,7 +49,6 @@
     unrar
     mpv
     # blender
-    # arduino-cli
     gimp
     nix-index
     p7zip
@@ -93,7 +93,7 @@
     stlink
     stlink-tool
     gcc-arm-embedded
-	
+
     dtc
     system-config-printer
 
@@ -111,18 +111,22 @@
     # cudatoolkit
     pureref
     arduino-cli
-    kicad-unstable
+    kicad
     wideriver
     cmus
     doxygen
     ngrok
     deno
-	sqlitebrowser
-	sqlite
-	rpi-imager
-	zip
-	dwl
+    sqlitebrowser
+    sqlite
+    rpi-imager
+    zip
+    dwl
   ];
 
-  services.udev.packages = with pkgs; [ saleae-logic-2 segger-jlink stlink ];
+  services.udev.packages = with pkgs; [
+    saleae-logic-2
+    segger-jlink
+    stlink
+  ];
 }

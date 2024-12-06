@@ -23,11 +23,15 @@
         };
       };
     };
-    keymaps = [{
-      mode = [ "n" ];
-      key = "-";
-      action = "<cmd>Oil<cr>";
-      options = { desc = "Oil"; };
-    }];
+    keymaps = [
+      {
+        mode = [ "n" ];
+        key = "-";
+        action = "<cmd>Oil<cr>";
+        options = {
+          desc = "Oil";
+        };
+      }
+    ];
   };
 }

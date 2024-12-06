@@ -1,4 +1,4 @@
 {
-	pkgs
+  pkgs,
 }:
-  pkgs.writeShellScriptBin "notifybrightness" ''notify-send "Brightness" "`brightnessctl g`"''
+pkgs.writeShellScriptBin "notifybrightness" ''notify-send "Brightness" "`brightnessctl g`"''

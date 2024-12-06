@@ -8,7 +8,10 @@
         lualine_a = [ "mode" ];
         lualine_b = [ "diagnostics" ];
         lualine_c = [ "" ];
-        lualine_x = [ "filetype" "filename" ];
+        lualine_x = [
+          "filetype"
+          "filename"
+        ];
         lualine_y = [ "progress" ];
         lualine_z = [ "location" ];
       };
@@ -19,8 +22,12 @@
             bg = "#000000";
             gui = "bold";
           };
-          b = { bg = "#000000"; };
-          c = { bg = "#000000"; };
+          b = {
+            bg = "#000000";
+          };
+          c = {
+            bg = "#000000";
+          };
         };
         insert = {
           a = {

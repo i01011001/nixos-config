@@ -2,18 +2,27 @@
 let
   version = "1.1.3-1";
   model = "dcpj125";
-in with pkgs; {
+in
+with pkgs;
+{
   driver = stdenv.mkDerivation {
     pname = model;
     version = version;
     src = fetchurl {
-      url =
-        "https://download.brother.com/welcome/dlf005583/dcpj125lpr-1.1.3-1.i386.deb";
+      url = "https://download.brother.com/welcome/dlf005583/dcpj125lpr-1.1.3-1.i386.deb";
       sha256 = "sha256-eWjbyYoZRzBkGTPrl83pOdNoAmKc9gev9EEupckAP40=";
 
     };
-    nativeBuildInputs = [ dpkg makeWrapper ];
-    buildInputs = [ cups ghostscript a2ps gawk ];
+    nativeBuildInputs = [
+      dpkg
+      makeWrapper
+    ];
+    buildInputs = [
+      cups
+      ghostscript
+      a2ps
+      gawk
+    ];
     unpackPhase = "dpkg-deb -x $src $out";
 
     installPhase = ''
@@ -46,8 +55,7 @@ in with pkgs; {
       sourceProvenance = with sourceTypes; [ binaryNativeCode ];
       license = licenses.unfree;
       platforms = platforms.linux;
-      downloadPage =
-        "https://support.brother.com/g/b/downloadlist.aspx?c=gb&lang=en&prod=${model}_all&os=128";
+      downloadPage = "https://support.brother.com/g/b/downloadlist.aspx?c=gb&lang=en&prod=${model}_all&os=128";
     };
   };
   cupswrapper = stdenv.mkDerivation {
@@ -55,19 +63,31 @@ in with pkgs; {
     inherit version;
 
     src = fetchurl {
-      url =
-        "https://download.brother.com/welcome/dlf005585/dcpj125cupswrapper-1.1.3-1.i386.deb";
+      url = "https://download.brother.com/welcome/dlf005585/dcpj125cupswrapper-1.1.3-1.i386.deb";
       sha256 = "sha256-H/ByGjWmD03en1dN/ZomxBnQrehiFapNiO15ypWegYQ=";
     };
 
-    nativeBuildInputs = [ dpkg makeWrapper ];
-    buildInputs = [ cups ghostscript a2ps gawk ];
+    nativeBuildInputs = [
+      dpkg
+      makeWrapper
+    ];
+    buildInputs = [
+      cups
+      ghostscript
+      a2ps
+      gawk
+    ];
     unpackPhase = "dpkg-deb -x $src $out";
 
     installPhase = ''
       for f in $out/opt/brother/Printers/${model}/cupswrapper/cupswrapper${model}; do
       wrapProgram $f --prefix PATH : ${
-        lib.makeBinPath [ coreutils ghostscript gnugrep gnused ]
+        lib.makeBinPath [
+          coreutils
+          ghostscript
+          gnugrep
+          gnused
+        ]
       }
       done
 
@@ -81,7 +101,6 @@ in with pkgs; {
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
     license = licenses.unfree;
     platforms = platforms.linux;
-    downloadPage =
-      "https://support.brother.com/g/b/downloadlist.aspx?c=gb&lang=en&prod=${model}_all&os=128";
+    downloadPage = "https://support.brother.com/g/b/downloadlist.aspx?c=gb&lang=en&prod=${model}_all&os=128";
   };
 }

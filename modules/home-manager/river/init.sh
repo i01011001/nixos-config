@@ -20,7 +20,7 @@ wideriver \ --layout            left        \
 --no-smart-gaps                             \
 --inner-gaps                    0           \
 --outer-gaps                    0           \
---border-width                  1           \
+--border-width                  6           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
 --border-color-focused-monocle  "0x676767"  \

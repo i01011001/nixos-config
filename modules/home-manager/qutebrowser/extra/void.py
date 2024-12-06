@@ -10,19 +10,15 @@
 bg_default = "#000000"          # main shade darkest
 bg_lighter = "#202020"
 bg_selection = "#393939"
-# "#545862"
 fg_disabled = "#565c64"
 fg_default = "#abb2bf"
-# "#b6bdca"
 bg_lightest = "#c0c0c0"         # main shade lightest
 fg_error = "#bf656e"            # red
-# "#d19a66"                     # orange
 bg_hint = "#dbc68c"             # yellow
 fg_matched_text = "#83ad84"     # green
 bg_passthrough_mode = "#7dafac" # teal
 bg_insert_mode = "#6286ad"      # blue
 bg_warning = "#8782af"          # purple
-# "#be5046"                     # dark red
 
 ############
 # SETTINGS #
@@ -96,13 +92,13 @@ c.colors.contextmenu.selected.fg = fg_default
 c.colors.downloads.bar.bg = bg_default
 
 # Color gradient start for download text.
-c.colors.downloads.start.fg = bg_default
+c.colors.downloads.start.fg = fg_default
 
 # Color gradient start for download backgrounds.
 c.colors.downloads.start.bg = bg_insert_mode
 
 # Color gradient end for download text.
-c.colors.downloads.stop.fg = bg_default
+c.colors.downloads.stop.fg = fg_default
 
 # Color gradient stop for download backgrounds.
 c.colors.downloads.stop.bg = bg_passthrough_mode
@@ -178,10 +174,10 @@ c.colors.statusbar.normal.fg = fg_matched_text
 c.colors.statusbar.normal.bg = bg_default
 
 # Foreground color of the statusbar in insert mode.
-c.colors.statusbar.insert.fg = bg_default
+c.colors.statusbar.insert.fg = fg_default
 
 # Background color of the statusbar in insert mode.
-c.colors.statusbar.insert.bg = bg_insert_mode
+c.colors.statusbar.insert.bg = bg_default
 
 # Foreground color of the statusbar in passthrough mode.
 c.colors.statusbar.passthrough.fg = bg_default
@@ -208,13 +204,13 @@ c.colors.statusbar.command.private.fg = fg_default
 c.colors.statusbar.command.private.bg = bg_default
 
 # Foreground color of the statusbar in caret mode.
-c.colors.statusbar.caret.fg = bg_default
+c.colors.statusbar.caret.fg = fg_default
 
 # Background color of the statusbar in caret mode.
-c.colors.statusbar.caret.bg = bg_warning
+c.colors.statusbar.caret.bg = bg_default
 
 # Foreground color of the statusbar in caret mode with a selection.
-c.colors.statusbar.caret.selection.fg = bg_default
+c.colors.statusbar.caret.selection.fg = fg_default
 
 # Background color of the statusbar in caret mode with a selection.
 c.colors.statusbar.caret.selection.bg = bg_insert_mode
@@ -258,7 +254,7 @@ c.colors.tabs.indicator.error = fg_error
 c.colors.tabs.odd.fg = fg_default
 
 # Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = bg_lighter
+c.colors.tabs.odd.bg = bg_default
 
 # Foreground color of unselected even tabs.
 c.colors.tabs.even.fg = fg_default
@@ -294,13 +290,13 @@ c.colors.tabs.pinned.selected.odd.fg = fg_default
 c.colors.tabs.selected.odd.fg = fg_default
 
 # Background color of selected odd tabs.
-c.colors.tabs.selected.odd.bg = bg_selection
+c.colors.tabs.selected.odd.bg = bg_lighter
 
 # Foreground color of selected even tabs.
 c.colors.tabs.selected.even.fg = fg_default
 
 # Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = bg_selection
+c.colors.tabs.selected.even.bg = bg_lighter
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).

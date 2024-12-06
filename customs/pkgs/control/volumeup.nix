@@ -1,5 +1,4 @@
-
 {
-	pkgs 
+  pkgs,
 }:
-  pkgs.writeShellScriptBin "volumeup" ''wpctl set-volume @DEFAULT_SINK@ 5%+''
+pkgs.writeShellScriptBin "volumeup" ''wpctl set-volume @DEFAULT_SINK@ 5%+''

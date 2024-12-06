@@ -1,1 +1,5 @@
-{ programs.nixvim.plugins.multicursors = { enable = true; }; }
+{
+  programs.nixvim.plugins.multicursors = {
+    enable = true;
+  };
+}

@@ -1,8 +1,8 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   wayland.windowManager.hyprland = {
     enable = true;
-    package =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # package = pkgs.hyprland;
     systemd.enable = true;
     xwayland.enable = true;

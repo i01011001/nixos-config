@@ -1,7 +1,7 @@
 {
   programs.nixvim = {
     opts = {
-        # globalstatus = true;
+      # globalstatus = true;
       # laststatus = 0;
       number = true;
       relativenumber = true;
@@ -24,7 +24,7 @@
       shiftwidth = 4;
       tabstop = 4;
       softtabstop = 4;
-      expandtab =false;
+      expandtab = false;
 
       showtabline = 0;
       signcolumn = "yes";
@@ -61,18 +61,22 @@
       updatetime = 50; # faster completion (4000ms default)
 
       # Set completeopt to have a better completion experience
-      completeopt = [ "menuone" "noselect" "noinsert" ]; # mostly just for cmp
+      completeopt = [
+        "menuone"
+        "noselect"
+        "noinsert"
+      ]; # mostly just for cmp
 
-# Set encoding type
+      # Set encoding type
       encoding = "utf-8";
       fileencoding = "utf-8";
     };
-    extraConfigVim =  '' 
-        set laststatus=0
-        hi! link StatusLine LineNr
-        hi! link StatusLineNC LineNr
-        hi! link WinSeparator LineNr
-        set statusline=%{repeat('─',winwidth('.'))}
+    extraConfigVim = ''
+      set laststatus=0
+      hi! link StatusLine LineNr
+      hi! link StatusLineNC LineNr
+      hi! link WinSeparator LineNr
+      set statusline=%{repeat('─',winwidth('.'))}
     '';
   };
 }

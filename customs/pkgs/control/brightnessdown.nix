@@ -1,5 +1,4 @@
-
 {
-	pkgs 
+  pkgs,
 }:
-  pkgs.writeShellScriptBin "brightnessdown" ''brightnessctl set 5%-''
+pkgs.writeShellScriptBin "brightnessdown" ''brightnessctl set 5%-''

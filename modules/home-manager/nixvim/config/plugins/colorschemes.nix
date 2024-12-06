@@ -93,7 +93,7 @@
 
           Folded = { fg = colors.overlay1, bg = colors.base },
           FoldColumn = { fg = colors.overlay1, bg = colors.base },
-          
+
           DiffAdd = {bg = "#1a291f"};
           DiffChange = {bg = "#202843"};
           DiffDelete = {bg = "#2e171a"};

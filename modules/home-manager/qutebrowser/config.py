@@ -660,3 +660,8 @@ class ConfigContainer:
         return attr
 
 config.source('./extra/void.py')
+config.set("colors.webpage.darkmode.enabled", True) 
+config.set("fonts.web.family.sans_serif", "Iosevka Nerd Font Mono")
+config.set("fonts.web.family.serif", "Iosevka Nerd Font Mono")
+config.set("fonts.web.family.standard", "Iosevka Nerd Font Mono")
+config.set("fonts.default_family", "Iosevka Nerd Font Mono")
