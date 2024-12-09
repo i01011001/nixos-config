@@ -4,14 +4,14 @@
                         ((hex >> 8) & 0xFF) / 255.0f, \
                         (hex & 0xFF) / 255.0f }
 /* appearance */
-static const int sloppyfocus               = 1;  /* focus follows mouse */
+static const int sloppyfocus               = 0;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const unsigned int borderpx         = 1;  /* border pixel of windows */
 static const int draw_minimal_borders      = 1; /* merge adjacent borders *///overlay
 static const float rootcolor[]             = COLOR(0x000000ff);
-static const float bordercolor[]           = COLOR(0x444444ff);
-static const float focuscolor[]            = COLOR(0x444444ff);
-static const float urgentcolor[]           = COLOR(0x444444ff);
+static const float bordercolor[]           = COLOR(0x464646ff);
+static const float focuscolor[]            = COLOR(0x464646ff);
+static const float urgentcolor[]           = COLOR(0x464646ff);
 /* This conforms to the xdg-protocol. Set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.0f, 0.0f, 0.0f, 1.0f}; /* You can also use glsl colors */
 static const int cursor_timeout = 3;  //overlay
@@ -41,7 +41,7 @@ static const Rule rules[] = {
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },
-	// { "><>",      NULL },    /* no layout function means floating behavior */
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -139,7 +139,9 @@ static const char *notifybattery[] = { "notifybattery", NULL };
 static const char *notifyvolume[] = { "notifyvolume", NULL };
 static const char *notifytime[] = { "notifytime", NULL };
 static const char *notifybrightness[] = { "notifybrightness", NULL };
-// static const char *notifycapacitly[] = { "notify-send", "\"Volume\"","`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `" , NULL };
+static const char *capturewhole[] = { "capture_whole", NULL };
+static const char *capturesection[] = { "capture_section", NULL };
+
 
 
 static const Key keys[] = {
@@ -156,14 +158,12 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_k,          swapstack,      {.i = 2} },//		
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_l,          swapstack,      {.i = 3} },//		
 	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_semicolon,  swapstack,      {.i = 4} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_apostrophe,      swapstack, {.i = -1} },//		
+	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_apostrophe, swapstack, {.i = -1} },//		
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_J,          relativeswap,   {.i = +1} },//
  	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_K,          relativeswap,   {.i = -1} },//overlay																			 
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_H,          setmfact,       {.f = -0.05f} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_L,          setmfact,       {.f = +0.05f} },
 
-	{ MODKEY,                    XKB_KEY_r,          spawn,          {.v = menucmd} },
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 	// { MODKEY,                    XKB_KEY_z,          incnmaster,     {.i = +1} },
 	// { MODKEY,                    XKB_KEY_z,          incnmaster,     {.i = -1} },
 	{ MODKEY,                    XKB_KEY_z,          focusstack,     {.i = +1} },
@@ -172,9 +172,9 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_C,          killclient,     {0} },
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
-	// { MODKEY,                    XKB_KEY_space,          setlayout,  {.v = &layouts[1]} },
-	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[1]} },
-	// { MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
+	{ MODKEY,                    XKB_KEY_f,			 setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
 	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },
 	{ MODKEY,                    XKB_KEY_0,          view,           {.ui = ~0} },
@@ -183,6 +183,9 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_period,     focusmon,       {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,       tagmon,         {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,    tagmon,         {.i = WLR_DIRECTION_RIGHT} },
+
+	{ MODKEY,                    XKB_KEY_r,          spawn,          {.v = menucmd} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
 
 	{ MODKEY|WLR_MODIFIER_CTRL, XKB_KEY_F8,		spawn,         {.v = volumeup} },
 	{ MODKEY|WLR_MODIFIER_CTRL, XKB_KEY_F7,		spawn,         {.v = volumedown} },
@@ -194,6 +197,9 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_CTRL, XKB_KEY_c,		spawn,         {.v = notifytime} },
 	{ MODKEY|WLR_MODIFIER_CTRL, XKB_KEY_x,		spawn,         {.v = notifybrightness} },
 	{ MODKEY|WLR_MODIFIER_CTRL, XKB_KEY_v,		spawn,         {.v = notifyvolume} },
+
+	{ MODKEY                   , XKB_KEY_p,		spawn,       {.v = capturewhole} },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,		spawn,       {.v = capturesection} },
 
 	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                     0),
 	TAGKEYS(          XKB_KEY_2, XKB_KEY_at,                         1),

@@ -7,16 +7,19 @@
     (import ../../../customs/pkgs/modpoll { inherit pkgs; })
     (import ../../../customs/pkgs/diagslave { inherit pkgs; })
 
-    (import ../../../customs/pkgs/control/volumeup.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/control/volumedown.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/control/volumemute.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/control/brightnessup.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/control/brightnessdown.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumeup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumedown.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumemute.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/brightnessup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/brightnessdown.nix { inherit pkgs; })
 
-    (import ../../../customs/pkgs/notify/volume.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/notify/time.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/notify/battery.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/notify/brightness.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/volume.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/time.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/battery.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/brightness.nix { inherit pkgs; })
+
+    (import ../../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
 
     websocat
     mosquitto
@@ -61,7 +64,7 @@
     grim
     slurp
     wl-clipboard
-    wlr-randr
+    # wlr-randr
     swayimg
     swaybg
     swappy
