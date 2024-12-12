@@ -19,6 +19,7 @@
   boot.initrd.kernelModules = [ ];
 
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelPackages = pkgs.linuxPackages_testing;
   boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = ''
     options snd_hda_intel power_save=0

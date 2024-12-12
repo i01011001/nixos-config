@@ -5,7 +5,7 @@
     ./nix-ld
     ./extra
     ./opentabletdriver
-    ./nvidia
+    # ./nvidia
     # ./fzf
     ./wireshark
     ./tmux

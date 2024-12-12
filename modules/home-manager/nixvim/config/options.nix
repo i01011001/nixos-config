@@ -1,82 +1,82 @@
 {
-  programs.nixvim = {
-    opts = {
-      # globalstatus = true;
-      # laststatus = 0;
-      number = true;
-      relativenumber = true;
-      cursorline = true;
-      cursorlineopt = "number";
+	programs.nixvim = {
+		opts = {
+# globalstatus = true;
+# laststatus = 0;
+			# number = true;
+			# relativenumber = true;
+			# cursorline = true;
+			# cursorlineopt = "number";
 
-      splitbelow = true;
-      splitright = true;
+			splitbelow = true;
+			splitright = true;
 
-      splitkeep = "screen";
+			splitkeep = "screen";
+			termguicolors = true; 
+			showmode = true;
+			incsearch = true;
+			hlsearch = false;
+			ignorecase = true;
+			smartcase = true;
 
-      termguicolors = true;
-      showmode = false;
+			shiftwidth = 4;
+			tabstop = 4;
+			softtabstop = 4;
+			expandtab = false;
 
-      incsearch = true;
-      hlsearch = false;
-      ignorecase = true;
-      smartcase = true;
+			showtabline = 0;
+			signcolumn = "yes";
+			ttyfast = true;
 
-      shiftwidth = 4;
-      tabstop = 4;
-      softtabstop = 4;
-      expandtab = false;
+			clipboard = "unnamedplus";
 
-      showtabline = 0;
-      signcolumn = "yes";
-      ttyfast = true;
+			smartindent = true;
+			breakindent = true;
+			scrolloff = 8;
 
-      clipboard = "unnamedplus";
+			foldcolumn = "0";
+			foldenable = true;
+			foldtext = "";
+			foldnestmax = 4;
+# foldlevel = 99;
+# foldlevelstart = 99;
 
-      smartindent = true;
-      breakindent = true;
-      scrolloff = 8;
+			foldmethod = "expr";
+			foldexpr = "v:lua.vim.treesitter.foldexpr()";
+# foldexpr = "v:lua.vim.lsp.foldexpr()";
+			linebreak = true;
 
-      foldcolumn = "0";
-      foldenable = true;
-      foldtext = "";
-      foldnestmax = 4;
-      # foldlevel = 99;
-      # foldlevelstart = 99;
+			wrap = false;
+			spell = false;
+			swapfile = false;
+			timeoutlen = 300;
+			mouse = "";
 
-      foldmethod = "expr";
-      foldexpr = "v:lua.vim.treesitter.foldexpr()";
-      # foldexpr = "v:lua.vim.lsp.foldexpr()";
-      linebreak = true;
+# Enable persistent undo history
+			backup = false;
+			undofile = true;
 
-      wrap = false;
-      spell = false;
-      swapfile = false;
-      timeoutlen = 300;
-      mouse = "";
 
-      # Enable persistent undo history
-      backup = false;
-      undofile = true;
+			updatetime = 50; # faster completion (4000ms default)
 
-      updatetime = 50; # faster completion (4000ms default)
+# Set completeopt to have a better completion experience
+				completeopt = [
+				"menuone"
+					"noselect"
+					"noinsert"
+				]; # mostly just for cmp
 
-      # Set completeopt to have a better completion experience
-      completeopt = [
-        "menuone"
-        "noselect"
-        "noinsert"
-      ]; # mostly just for cmp
-
-      # Set encoding type
-      encoding = "utf-8";
-      fileencoding = "utf-8";
-    };
-    extraConfigVim = ''
-      set laststatus=0
-      hi! link StatusLine LineNr
-      hi! link StatusLineNC LineNr
-      hi! link WinSeparator LineNr
-      set statusline=%{repeat('─',winwidth('.'))}
-    '';
-  };
+# Set encoding type
+				encoding = "utf-8";
+			fileencoding = "utf-8";
+		};
+extraConfigVim = ''
+  set wildoptions-=pum
+  set laststatus=0
+  hi! link StatusLine LineNr
+  hi! link StatusLineNC LineNr
+  hi! link WinSeparator LineNr
+  set statusline=%{repeat('─',winwidth('.'))}
+'';
+	};
 }

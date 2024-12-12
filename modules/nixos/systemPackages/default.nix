@@ -20,7 +20,6 @@
 
     (import ../../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
-
     websocat
     mosquitto
     rlwrap
@@ -106,7 +105,7 @@
     gdb
     valgrind
     file
-    nvtopPackages.full
+    # nvtopPackages.full
     discord-unstable
     playerctl
 
@@ -125,6 +124,7 @@
     rpi-imager
     zip
     dwl
+	cpulimit
   ];
 
   services.udev.packages = with pkgs; [

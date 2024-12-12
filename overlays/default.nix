@@ -73,7 +73,7 @@
     })
 
     (self: super: {
-      dwl = super.dwl.overrideAttrs (oldAttrs: rec {
+      dwl = (super.dwl.overrideAttrs (oldAttrs: rec {
         patches = [
           ../customs/pkgs/dwl/dwl-patches/attachbottom.patch
           ../customs/pkgs/dwl/dwl-patches/pertag.patch
@@ -85,10 +85,7 @@
           ../customs/pkgs/dwl/dwl-patches/stacker.patch
           ../customs/pkgs/dwl/dwl-patches/zoomswap.patch
         ];
-      });
-    })
-    (final: prev: {
-      dwl = prev.dwl.override { configH = ../customs/pkgs/dwl/config.h; };
+      })).override { configH = ../customs/pkgs/dwl/config.h; };
     })
   ];
 }
