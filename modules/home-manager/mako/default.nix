@@ -5,7 +5,7 @@
     progressColor = "#363636";
     borderColor = "#404040";
     textColor = "#c0c0c0";
-    font = "Iosevka Nerd Font 10";
+    font = "Mononoki Nerd Font Mono 9";
     width = 340;
     defaultTimeout = 3600;
     borderRadius = 0;

@@ -19,9 +19,9 @@
           "floorp.browser.sidebar.right" = false;
           "floorp.browser.tabbar.settings" = 2;
           "floorp.tabbar.style" = 2;
-          "font.name.monospace.x-western" = "Iosevka Nerd Font Mono";
-          "font.name.sans-serif.x-western" = "Iosevka Nerd Font Mono";
-          "font.name.serif.x-western" = "Iosevka Nerd Font Mono";
+          "font.name.monospace.x-western" = "Mononoki Nerd Font Propo";
+          "font.name.sans-serif.x-western" = "Mononoki Nerd Font Propo";
+          "font.name.serif.x-western" = "Mononoki Nerd Font Propo";
 
           "floorp.Tree-type.verticaltab.optimization" = true;
           "floorp.browser.tabs.verticaltab" = true;

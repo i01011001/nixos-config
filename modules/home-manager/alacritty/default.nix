@@ -4,20 +4,21 @@
     settings = {
       window = {
         padding = {
-          x = 6;
-          y = 7;
+          x = 3;
+          y = 3;
         };
         decorations = "None";
       };
       font = {
         normal = {
-          family = "Iosevka NF Medium";
+          # family = "Mononoki Nerd Font Mono";
+          family = "Mononoki Nerd Font";
           style = "Regular";
         };
-        size = 11;
-        offset = {
-          y = -2;
-        };
+        size = 10;
+        # offset = {
+        #   y = -2;
+        # };
       };
       keyboard = {
         bindings = [

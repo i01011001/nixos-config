@@ -14,7 +14,6 @@ in
 			./config/plugins/lsp.nix
 			./config/plugins/telescope.nix
 			./config/plugins/whichkey.nix
-			./config/plugins/colorschemes.nix
 			./config/plugins/oil.nix
 			./config/plugins/harpoon.nix
 			./config/plugins/cmp.nix
@@ -22,17 +21,10 @@ in
 			./config/plugins/web-devicons.nix
 			./config/plugins/diffview.nix
 			./config/plugins/surround.nix
+			./config/plugins/colorschemes.nix
+			./config/plugins/base16.nix
+			./config/plugins/fzf-lua.nix
 # ./config/plugins/gitsigns.nix
-# ./config/plugins/noice.nix
-# ./config/plugins/notify.nix
-# ./config/plugins/treesitter.nix
-# ./config/plugins/mini.nix
-# ./config/plugins/neogit.nix
-# ./config/plugins/lazygit.nix
-# ./config/plugins/lualine.nix
-# ./config/plugins/ufo.nix
-# ./config/plugins/neorg.nix
-# ./config/plugins/bufferline.nix
 
 ### basics
 			./config/keymaps.nix
@@ -46,6 +38,10 @@ in
 			float = {
 				border = "single";
 			};
+# virtual_lines.only_current_line = false;
+			virtual_text = false;
+# signs = false;
+
 		};
 		package = inputs.neovim-nightly.packages.${pkgs.system}.default;
 
@@ -61,7 +57,16 @@ in
 		];
 
 		extraConfigLua = ''
-			'';
 
+			vim.diagnostic.config({
+					signs = {
+					text = {
+					[vim.diagnostic.severity.ERROR] = '',
+					[vim.diagnostic.severity.WARN] = '',
+					[vim.diagnostic.severity.INFO] = '',
+					},
+					},
+					})
+		'';
 	};
 }

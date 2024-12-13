@@ -3,8 +3,8 @@
   gtk = {
     enable = true;
     font = {
-      name = "Iosevka Nerd Font Mono";
-      size = 11;
+      name = "Mononoki Nerd Font Mono";
+      size = 10;
     };
     theme = {
       package = pkgs.flat-remix-gtk;

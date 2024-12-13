@@ -55,9 +55,7 @@
 
   fonts = {
     packages = with pkgs; [
-      # nerdFronts
-      # (nerdfonts.override { fonts = [ "Iosevka" ]; })
-      nerd-fonts.iosevka
+	  nerd-fonts.mononoki
 
       # normal Fonts
 
@@ -69,9 +67,9 @@
       material-design-icons
     ];
     fontconfig.defaultFonts = {
-      monospace = [ "Iosevka Nerd Font Mono" ];
-      sansSerif = [ "Iosevka Nerd Font Mono" ];
-      serif = [ "Iosevka Nerd Font Mono" ];
+      monospace = [ "Mononoki Nerd Font Mono" ];
+      sansSerif = [ "Mononoki Nerd Font Mono" ];
+      serif = [ "Mononoki Nerd Font Mono" ];
     };
   };
 

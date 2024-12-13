@@ -4,9 +4,9 @@
       enable = true;
       settings = {
         main = {
-          font = "Iosevka NF Medium: size=11";
-          line-height = 13.5;
-          pad = "3x3";
+          font = "Mononoki Nerd Font Mono: size=9";
+          # line-height = 13.5;
+          pad = "6x6";
           # box-drawings-uses-font-glyphs = "yes";
           # resize-delay-ms = 0;
           # initial-window-size-chars = "82x23";

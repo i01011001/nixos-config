@@ -1,11 +1,9 @@
 {
 	programs.nixvim = {
 		opts = {
-# globalstatus = true;
-# laststatus = 0;
 			# number = true;
 			# relativenumber = true;
-			# cursorline = true;
+			cursorline = true;
 			# cursorlineopt = "number";
 
 			splitbelow = true;
@@ -56,7 +54,6 @@
 			backup = false;
 			undofile = true;
 
-
 			updatetime = 50; # faster completion (4000ms default)
 
 # Set completeopt to have a better completion experience
@@ -69,6 +66,8 @@
 # Set encoding type
 				encoding = "utf-8";
 			fileencoding = "utf-8";
+
+
 		};
 extraConfigVim = ''
   set wildoptions-=pum

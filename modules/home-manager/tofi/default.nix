@@ -4,8 +4,8 @@
     settings = {
       background-color = "#000000";
       border-width = 0;
-      font = "Iosevka Nerd Font Mono";
-      font-size = 17;
+      font = "Mononoki Nerd Font Mono";
+      font-size = 13;
       text-color = "#aaaaaa";
       selection-color = "#ffffff";
       height = "100%";

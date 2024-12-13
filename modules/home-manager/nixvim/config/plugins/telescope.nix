@@ -4,7 +4,18 @@
 			enable = true;
 			settings= {
 				defaults = {
-					layout_strategy="current_buffer";
+					layout_strategy="buffer";
+					# layout_config = {
+					# 	botton_pane = {
+					# 		height = 0.4;
+					# 		preview_cutoff = 40;
+					# 		prompt_position = "top";
+					# 		width = 0.5;
+					# 	};
+					# };
+					borderchars = [
+						"─" "│" "─" "│" "┌" "┐" "┘" "└"
+					];
 				};
 			};
 			extensions.fzf-native = {
@@ -81,7 +92,8 @@
 		};
 
     extraConfigLua = ''
-require("telescope.pickers.layout_strategies").buffer_window = function(self)
+	local api=vim.api
+require("telescope.pickers.layout_strategies").buffer = function(self)
   local layout = require("telescope.pickers.window").get_initial_window_options(self)
   local prompt = layout.prompt
   local results = layout.results
@@ -96,7 +108,7 @@ require("telescope.pickers.layout_strategies").buffer_window = function(self)
   
   -- Height
   prompt.height = 1
-  preview.height = self.previewer and math.floor(height * 0.4) or 0
+  preview.height = self.previewer and math.floor(height * 0.64) or 0
   results.height = height
     - padding
     - (prompt.height + padding)
