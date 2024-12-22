@@ -24,22 +24,22 @@ riverctl map normal Super+Alt+Shift K resize vertical 100
 riverctl map normal Super+Alt+Shift L resize horizontal 100
 riverctl map normal Super+Control B spawn 'notify-send "Capacity" "`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`"'
 riverctl map normal Super+Control C spawn 'notify-send  "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`" '
-riverctl map normal Super+Control F toggle-fullscreen
 riverctl map normal Super+Control V spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' 
 riverctl map normal Super+Control X spawn 'notify-send "Brightness"  "`brightnessctl g`"'
 riverctl map normal Super+Shift C close
 riverctl map normal Super+Shift Comma send-to-output previous
-riverctl map normal Super+Shift F11 spawn 'brightnessctl set 5%-'
-riverctl map normal Super+Shift F12 spawn 'brightnessctl set 5%+'
-riverctl map normal Super+Shift F6 spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
-riverctl map normal Super+Shift F7 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%- '
-riverctl map normal Super+Shift F8 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%+ '
+riverctl map normal Super+Control F11 spawn 'brightnessctl set 5%-'
+riverctl map normal Super+Control F12 spawn 'brightnessctl set 5%+'
+riverctl map normal Super+Control F6 spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
+riverctl map normal Super+Control F7 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%- '
+riverctl map normal Super+Control F8 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%+ '
 riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
 riverctl map normal Super+Shift P spawn 'grim -g "$(slurp)" -| swappy -f -' 
 riverctl map normal Super+Shift Period send-to-output next
 riverctl map normal Super+Shift Q exit
 riverctl map normal Super+Shift Return spawn alacritty
+riverctl map normal Super+Control F toggle-fullscreen
 riverctl set-repeat 60 280
 
 ### EXTRA CONFIGURATION ###
@@ -76,22 +76,29 @@ riverctl border-color-urgent  "0x444444"
 riverctl border-color-focused "0x444444" 
 riverctl border-color-unfocused "0x444444" 
 
-riverctl map normal Super+Control K send-layout-cmd wideriver "--layout top"
-riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
-riverctl map normal Super+Control J send-layout-cmd wideriver "--layout bottom"
-riverctl map normal Super+Control H send-layout-cmd wideriver "--layout left"
+riverctl map normal Super+Control K spawn layout-top
+riverctl map normal Super+Control L spawn layout-right
+riverctl map normal Super+Control J spawn layout-bottom 
+riverctl map normal Super+Control H spawn layout-left
 riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
 riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
 
+# riverctl map normal Super+Control K send-layout-cmd wideriver "--layout top"
+# riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
+# riverctl map normal Super+Control J send-layout-cmd wideriver "--layout bottom"
+# riverctl map normal Super+Control H send-layout-cmd wideriver "--layout left"
+# riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
+# riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
+
 riverctl map normal Super+Control Space send-layout-cmd wideriver "--layout-toggle"
 
-riverctl map normal Super+Shift+Control L send-layout-cmd wideriver "--ratio +0.025"
-riverctl map normal Super+Shift+Control equal send-layout-cmd wideriver "--ratio .60"
-riverctl map normal Super+Shift+Control H send-layout-cmd wideriver "--ratio -0.025"
+riverctl map normal Super+Shift L send-layout-cmd wideriver "--ratio +0.025"
+riverctl map normal Super+Shift equal send-layout-cmd wideriver "--ratio .60"
+riverctl map normal Super+Shift H send-layout-cmd wideriver "--ratio -0.025"
 
-riverctl map normal Super+Shift L send-layout-cmd wideriver "--count +1"
-riverctl map normal Super+Shift H send-layout-cmd wideriver "--count -1"
-riverctl map normal Super+Shift equal send-layout-cmd wideriver "--count 1"
+# riverctl map normal Super+Shift+Control L send-layout-cmd wideriver "--count +1"
+# riverctl map normal Super+Shift+Control H send-layout-cmd wideriver "--count -1"
+# riverctl map normal Super+Shift+Control equal send-layout-cmd wideriver "--count 1"
 
 riverctl map normal Super+Control E send-layout-cmd wideriver "--stack even"
 riverctl map normal Super+Control S send-layout-cmd wideriver "--stack dwindle"
@@ -135,4 +142,5 @@ done
 exec mako &
 # wlr-randr --output HDMI-A-2 --pos -1440,0 &
 swaybg -m center -i /etc/nixos/modules/home-manager/river/simple-nix-black.png --output eDP-1 &  
+layout-left
 

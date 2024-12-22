@@ -22,9 +22,11 @@
     (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
 
     (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
+
+    (import ../../../customs/pkgs/wideriver {inherit pkgs;})
 
 
     websocat
