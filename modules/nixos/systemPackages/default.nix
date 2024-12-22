@@ -26,7 +26,7 @@
     (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
 
-    (import ../../../customs/pkgs/wideriver {inherit pkgs;})
+    (import ../../../customs/pkgs/wideriver/default.nix {inherit pkgs;})
 
 
     websocat
