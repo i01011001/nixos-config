@@ -109,7 +109,7 @@
 
         window = {
           completion = {
-            winhighlight = "floatborder:cmpborder,normal:cmppmenu,cursorline:cmpsel,search:pmenusel";
+            winhighlight = "floatborder:FloatBorder,normal:PmenuThumb,cursorline:PmenuSel,search:None";
             scrollbar = false;
             sidepadding = 0;
             border = [
@@ -125,7 +125,7 @@
           };
 
           documentation = {
-            winhighlight = "floatborder:cmpborder,normal:cmppmenu,cursorline:cmpsel,search:pmenusel";
+            winhighlight = "floatborder:FloatBorder,normal:PmenuThumb,cursorline:PmenuSel,search:None";
             scrollbar = false;
             sidepadding = 0;
             border = [
@@ -141,7 +141,7 @@
           };
 
           ui = {
-            winhighlight = "floatborder:cmpborder,normal:cmppmenu,cursorline:cmpsel,search:pmenusel";
+            winhighlight = "floatborder:FloatBorder,normal:PmenuThumb,cursorline:PmenuSel,search:None";
             scrollbar = false;
             sidepadding = 0;
             border = [

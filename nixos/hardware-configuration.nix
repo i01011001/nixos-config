@@ -9,20 +9,21 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [
+  boot.initrd = {
+	  availableKernelModules = [
     "xhci_pci"
     "ahci"
     "nvme"
     "usb_storage"
     "sd_mod"
   ];
-  boot.initrd.kernelModules = [ ];
+  };
 
   boot.kernelModules = [ "kvm-intel" ];
-  boot.kernelPackages = pkgs.linuxPackages_testing;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
   boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = ''
-    options snd_hda_intel power_save=0
+    options snd_hda_intel 
   '';
 
   fileSystems."/" = {

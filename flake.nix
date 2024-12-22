@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,15 +16,19 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
     # gBar.url = "github:i01011001/gBar";
+		wezterm-flake = {
+			url = "github:wez/wezterm/main?dir=nix";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 
-    # hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
+    split-monitor-workspaces = {
+    	url = "github:Duckonaut/split-monitor-workspaces";
+    	inputs.hyprland.follows = "hyprland";
+    };
     # hy3 = {
     #     url = "github:outfoxxed/hy3";
     #     inputs.hyprland.follows = "hyprland";
-    # };
-    # split-monitor-workspaces = {
-    # 	url = "github:Duckonaut/split-monitor-workspaces";
-    # 	inputs.hyprland.follows = "hyprland";
     # };
   };
 

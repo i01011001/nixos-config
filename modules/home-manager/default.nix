@@ -21,11 +21,11 @@
     ./git
     ./tofi
     ./mako
+    ./river
     # ./sway
     # ./hypr
     # ./wezterm
     # ./foot
-    # ./river
     # ./qutebrowser
   ];
 }

@@ -1,3 +1,48 @@
+riverctl background-color 0x000000
+riverctl default-attach-mode bottom
+riverctl hide-cursor timeout 3600
+riverctl hide-cursor when-typing enabled
+riverctl map normal Super Comma focus-output previous
+riverctl map normal Super J focus-view next
+riverctl map normal Super K focus-view previous
+riverctl map normal Super P spawn 'grim -| swappy -f -' 
+riverctl map normal Super Period focus-output next
+riverctl map normal Super R spawn tofi-drun
+riverctl map normal Super Return zoom
+riverctl map normal Super Space toggle-float
+riverctl map normal Super+Alt H move left 100
+riverctl map normal Super+Alt J move down 100
+riverctl map normal Super+Alt K move up 100
+riverctl map normal Super+Alt L move right 100
+riverctl map normal Super+Alt+Control H snap left
+riverctl map normal Super+Alt+Control J snap down
+riverctl map normal Super+Alt+Control K snap up
+riverctl map normal Super+Alt+Control L snap right
+riverctl map normal Super+Alt+Shift H resize horizontal -100
+riverctl map normal Super+Alt+Shift J resize vertical -100
+riverctl map normal Super+Alt+Shift K resize vertical 100
+riverctl map normal Super+Alt+Shift L resize horizontal 100
+riverctl map normal Super+Control B spawn 'notify-send "Capacity" "`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`"'
+riverctl map normal Super+Control C spawn 'notify-send  "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`" '
+riverctl map normal Super+Control F toggle-fullscreen
+riverctl map normal Super+Control V spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' 
+riverctl map normal Super+Control X spawn 'notify-send "Brightness"  "`brightnessctl g`"'
+riverctl map normal Super+Shift C close
+riverctl map normal Super+Shift Comma send-to-output previous
+riverctl map normal Super+Shift F11 spawn 'brightnessctl set 5%-'
+riverctl map normal Super+Shift F12 spawn 'brightnessctl set 5%+'
+riverctl map normal Super+Shift F6 spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
+riverctl map normal Super+Shift F7 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%- '
+riverctl map normal Super+Shift F8 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%+ '
+riverctl map normal Super+Shift J swap next
+riverctl map normal Super+Shift K swap previous
+riverctl map normal Super+Shift P spawn 'grim -g "$(slurp)" -| swappy -f -' 
+riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Q exit
+riverctl map normal Super+Shift Return spawn alacritty
+riverctl set-repeat 60 280
+
+### EXTRA CONFIGURATION ###
 riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad tap enabled
 riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad natural-scroll enabled
 
@@ -20,29 +65,29 @@ wideriver \ --layout            left        \
 --no-smart-gaps                             \
 --inner-gaps                    0           \
 --outer-gaps                    0           \
---border-width                  6           \
+--border-width                  1           \
 --border-width-monocle          1           \
 --border-width-smart-gaps       0           \
---border-color-focused-monocle  "0x676767"  \
---border-color-focused          "0x676767"  \
+--border-color-focused-monocle  "0x444444"  \
+--border-color-focused          "0x444444"  \
 --border-color-unfocused        "0x444444"  &      
 
-riverctl border-color-urgent  "0x676767" 
-riverctl border-color-focused "0x676767" 
+riverctl border-color-urgent  "0x444444" 
+riverctl border-color-focused "0x444444" 
 riverctl border-color-unfocused "0x444444" 
 
-riverctl map normal Super+Control K    send-layout-cmd wideriver "--layout top"
+riverctl map normal Super+Control K send-layout-cmd wideriver "--layout top"
 riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
-riverctl map normal Super+Control J  send-layout-cmd wideriver "--layout bottom"
-riverctl map normal Super+Control H  send-layout-cmd wideriver "--layout left"
+riverctl map normal Super+Control J send-layout-cmd wideriver "--layout bottom"
+riverctl map normal Super+Control H send-layout-cmd wideriver "--layout left"
 riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
-riverctl map normal Super+Control W  send-layout-cmd wideriver "--layout wide"
+riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
 
 riverctl map normal Super+Control Space send-layout-cmd wideriver "--layout-toggle"
 
-riverctl map normal Super L send-layout-cmd wideriver "--ratio +0.025"
-riverctl map normal Super equal send-layout-cmd wideriver "--ratio .60"
-riverctl map normal Super H send-layout-cmd wideriver "--ratio -0.025"
+riverctl map normal Super+Shift+Control L send-layout-cmd wideriver "--ratio +0.025"
+riverctl map normal Super+Shift+Control equal send-layout-cmd wideriver "--ratio .60"
+riverctl map normal Super+Shift+Control H send-layout-cmd wideriver "--ratio -0.025"
 
 riverctl map normal Super+Shift L send-layout-cmd wideriver "--count +1"
 riverctl map normal Super+Shift H send-layout-cmd wideriver "--count -1"

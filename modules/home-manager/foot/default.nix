@@ -4,23 +4,12 @@
       enable = true;
       settings = {
         main = {
-          font = "Mononoki Nerd Font Mono: size=9";
+          font = "Iosevka Nerd Font Medium: size=10";
           # line-height = 13.5;
-          pad = "6x6";
-          # box-drawings-uses-font-glyphs = "yes";
-          # resize-delay-ms = 0;
-          # initial-window-size-chars = "82x23";
-          # initial-window-mode = "windowed";
+          pad = "5x3";
         };
-
-        # tweak = {
-        #   scaling-filter = "none";
-        #   box-drawing-solid-shades = "no";
-        #   font-monospace-warn = "no";
-        #   max-shm-pool-size-mb = 2048;
-        # };
         colors = {
-          alpha = 1;
+          # alpha = 1;
           background = "000000";
           foreground = "cccccc";
 

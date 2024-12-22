@@ -3,7 +3,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "Mononoki Nerd Font Mono";
+      name = "Iosevka Nerd Font Propo";
       size = 10;
     };
     theme = {
@@ -24,7 +24,6 @@
     iconTheme = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
-
     };
     gtk3 = {
       extraCss = builtins.readFile ./gtk.css;

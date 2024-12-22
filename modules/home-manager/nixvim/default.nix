@@ -11,24 +11,25 @@ in
 	imports = [
 		inputs.nixvim.homeManagerModules.nixvim
 ### plugins
-			./config/plugins/lsp.nix
-			./config/plugins/telescope.nix
-			./config/plugins/whichkey.nix
-			./config/plugins/oil.nix
-			./config/plugins/harpoon.nix
-			./config/plugins/cmp.nix
-			./config/plugins/markdown-preview.nix
-			./config/plugins/web-devicons.nix
-			./config/plugins/diffview.nix
-			./config/plugins/surround.nix
-			./config/plugins/colorschemes.nix
-			./config/plugins/base16.nix
-			./config/plugins/fzf-lua.nix
-# ./config/plugins/gitsigns.nix
+			./config/plugins/lsp
+			./config/plugins/telescope
+			./config/plugins/whichkey
+			./config/plugins/oil
+			./config/plugins/harpoon
+			./config/plugins/markdown-preview
+			./config/plugins/web-devicons
+			./config/plugins/diffview
+			./config/plugins/surround
+			./config/plugins/colorizer
+			./config/plugins/cmp
+			# ./config/plugins/blink
+			# ./config/plugins/fzf-lua
+# ./config/plugins/gitsigns
 
 ### basics
-			./config/keymaps.nix
-			./config/options.nix
+			./config/colorscheme
+			./config/keymaps
+			./config/options
 			];
 
 	programs.nixvim = {
@@ -57,7 +58,6 @@ in
 		];
 
 		extraConfigLua = ''
-
 			vim.diagnostic.config({
 					signs = {
 					text = {

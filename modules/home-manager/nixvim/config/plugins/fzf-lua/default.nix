@@ -1,6 +1,19 @@
 {
 	programs.nixvim.plugins.fzf-lua= {
 		enable = true;
+		settings = {
+			winopts = {
+				fullscreen = true;
+				border = "none";
+				preview = {
+					default = "bat";
+					border = "border";
+					layout = "vertical";
+					vertical = "down:60%";
+				};	
+			};
+
+		};
 		keymaps = 
 		{
 			"<C-p>" = {

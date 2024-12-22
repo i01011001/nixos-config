@@ -4,7 +4,7 @@
     settings = {
       window = {
         padding = {
-          x = 3;
+          x = 5;
           y = 3;
         };
         decorations = "None";
@@ -12,12 +12,13 @@
       font = {
         normal = {
           # family = "Mononoki Nerd Font Mono";
-          family = "Mononoki Nerd Font";
-          style = "Regular";
+          # family = "Mononoki Nerd Font";
+          family = "Iosevka Nerd Font";
+          style = "Medium";
         };
         size = 10;
         # offset = {
-        #   y = -2;
+        #   y = -1;
         # };
       };
       keyboard = {
@@ -38,7 +39,7 @@
           black = "#303030";
           red = "#bf656e";
           green = "#83ad84";
-          yellow = "#dbc68c";
+          yellow = "#dbcc8c";
           blue = "#6286ad";
           magenta = "#8782af";
           cyan = "#7dafac";
@@ -48,7 +49,7 @@
           black = "#606060";
           red = "#bf656e";
           green = "#83ad84";
-          yellow = "#dbc68c";
+          yellow = "#dbcc8c";
           blue = "#6286ad";
           magenta = "#8782af";
           cyan = "#7dafac";

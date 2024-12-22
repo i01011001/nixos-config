@@ -2,9 +2,9 @@
 	programs.nixvim = {
 		opts = {
 			# number = true;
-			# relativenumber = true;
+			relativenumber = true;
 			cursorline = true;
-			# cursorlineopt = "number";
+			cursorlineopt = "number";
 
 			splitbelow = true;
 			splitright = true;
@@ -69,13 +69,10 @@
 
 
 		};
-extraConfigVim = ''
-  set wildoptions-=pum
-  set laststatus=0
-  hi! link StatusLine LineNr
-  hi! link StatusLineNC LineNr
-  hi! link WinSeparator LineNr
-  set statusline=%{repeat('─',winwidth('.'))}
+		extraConfigVim = ''
+			set wildoptions-=pum
+			set laststatus=0
+			set statusline=%{repeat('─',winwidth('.'))}
 '';
 	};
 }
