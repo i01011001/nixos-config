@@ -16,26 +16,13 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
     # gBar.url = "github:i01011001/gBar";
-		wezterm-flake = {
-			url = "github:wez/wezterm/main?dir=nix";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    split-monitor-workspaces = {
-    	url = "github:Duckonaut/split-monitor-workspaces";
-    	inputs.hyprland.follows = "hyprland";
-    };
-    # hy3 = {
-    #     url = "github:outfoxxed/hy3";
-    #     inputs.hyprland.follows = "hyprland";
-    # };
   };
 
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     let
-      hostname = "delta";
+      hostname = "nixos";
       username = "void";
     in
     # system = "x86_64-linux";
@@ -59,6 +46,7 @@
                   ./home-manager
                   # ./modules/home-manager/hypr
                   # inputs.gBar.homeManagerModules.x86_64-linux.default
+
                 ];
               };
             };

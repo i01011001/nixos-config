@@ -2,11 +2,11 @@ riverctl background-color 0x000000
 riverctl default-attach-mode bottom
 riverctl hide-cursor timeout 3600
 riverctl hide-cursor when-typing enabled
-riverctl map normal Super Comma focus-output previous
-riverctl map normal Super J focus-view next
-riverctl map normal Super K focus-view previous
+riverctl map normal Super Comma focus-output left
+riverctl map normal Super J focus-view -skip-floating next
+riverctl map normal Super K focus-view -skip-floating previous
 riverctl map normal Super P spawn 'grim -| swappy -f -' 
-riverctl map normal Super Period focus-output next
+riverctl map normal Super Period focus-output right
 riverctl map normal Super R spawn tofi-drun
 riverctl map normal Super Return zoom
 riverctl map normal Super Space toggle-float
@@ -59,7 +59,7 @@ wideriver \ --layout            left        \
 --layout-alt                    monocle     \
 --stack                         diminish    \
 --count-master                  1           \
---ratio-master                  0.6         \
+--ratio-master                  0.55        \
 --count-wide-left               2           \
 --ratio-wide                    0.35        \
 --no-smart-gaps                             \
@@ -92,9 +92,9 @@ riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
 
 riverctl map normal Super+Control Space send-layout-cmd wideriver "--layout-toggle"
 
-riverctl map normal Super+Shift L send-layout-cmd wideriver "--ratio +0.025"
-riverctl map normal Super+Shift equal send-layout-cmd wideriver "--ratio .60"
-riverctl map normal Super+Shift H send-layout-cmd wideriver "--ratio -0.025"
+riverctl map normal Super+Shift L send-layout-cmd wideriver "--ratio +0.05"
+riverctl map normal Super+Shift equal send-layout-cmd wideriver "--ratio .55"
+riverctl map normal Super+Shift H send-layout-cmd wideriver "--ratio -0.05"
 
 # riverctl map normal Super+Shift+Control L send-layout-cmd wideriver "--count +1"
 # riverctl map normal Super+Shift+Control H send-layout-cmd wideriver "--count -1"
@@ -104,9 +104,9 @@ riverctl map normal Super+Control E send-layout-cmd wideriver "--stack even"
 riverctl map normal Super+Control S send-layout-cmd wideriver "--stack dwindle"
 riverctl map normal Super+Control I send-layout-cmd wideriver "--stack diminish"
 
-# riverctl map-pointer normal Super BTN_LEFT move-view
-# riverctl map-pointer normal Super BTN_RIGHT resize-view
-# riverctl map-pointer normal Super BTN_MIDDLE toggle-float
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 riverctl set-cursor-warp on-focus-change 
 
@@ -142,5 +142,6 @@ done
 exec mako &
 # wlr-randr --output HDMI-A-2 --pos -1440,0 &
 swaybg -m center -i /etc/nixos/modules/home-manager/river/simple-nix-black.png --output eDP-1 &  
-layout-left
+layout-left &
+wlr-randr  --output HDMI-A-2 --pos -1440,0 &
 

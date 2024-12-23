@@ -87,7 +87,11 @@
 	services.blueman.enable = true;
 
 	networking = {
-		hostName = "delta";
+		# networkmanager = {
+		# 	enable = true;
+		# 	wifi.backend = "iwd";
+		# 	};
+		hostName = "nixos";
 		wireless.iwd = {
 			enable = true;
 			settings = {
@@ -100,13 +104,13 @@
 			allowedTCPPorts = [ 22 ];
 		};
 		useDHCP = false;
-# interfaces.enp7s0 = {
-#     useDHCP = true;
-#     ipv4.addresses = [ {
-#         address = "192.168.1.69";
-#         prefixLength = 24;
-#     } ];
-# };
+		interfaces.enp7s0 = {
+			useDHCP = true;
+			ipv4.addresses = [ {
+				address = "192.168.1.70";
+				prefixLength = 24;
+			} ];
+		};
 
 		interfaces.wlan0 = {
 			useDHCP = true;
@@ -204,6 +208,7 @@
 					"wireshark"
 					"lp"
 					"scanner"
+					"networkmanager"
 			];
 			initialPassword = "01011001";
 			openssh.authorizedKeys.keys = [

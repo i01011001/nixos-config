@@ -8,7 +8,7 @@
     font = "Iosevka Nerd Font Propo 10";
     width = 340;
     defaultTimeout = 3600;
-	borderSize = 0;
+	borderSize = 1;
     borderRadius = 0;
     layer = "overlay";
 	margin = "0";

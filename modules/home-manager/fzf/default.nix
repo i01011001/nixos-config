@@ -22,11 +22,11 @@
       # "--color=bw"
     ];
     changeDirWidgetOptions = [
-      "--preview 'tree -C {} | head -200'"
+      # "--preview 'tree -C {} | head -200'"
     ];
     changeDirWidgetCommand = "fd --type d ";
     fileWidgetOptions = [
-      "--preview 'head {}'"
+      # "--preview 'head {}'"
     ];
     fileWidgetCommand = "fd --type f";
     historyWidgetOptions = [

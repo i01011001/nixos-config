@@ -26,7 +26,7 @@
     (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
 
-    (import ../../../customs/pkgs/wideriver/default.nix {inherit pkgs;})
+    (import ../../../customs/wideriver/default.nix {inherit pkgs;})
 
 
     websocat
@@ -72,17 +72,17 @@
     grim
     slurp
     wl-clipboard
-    # wlr-randr
+    wlr-randr
     swayimg
     swaybg
     swappy
-    wf-recorder
+	wl-screenrec
     wlopm
 
     #### NRF
     nrf-command-line-tools
     segger-jlink
-    nrfconnect
+    # nrfconnect
 
     skypeforlinux
     xfce.thunar
@@ -111,7 +111,7 @@
     imagemagick
     postman
 
-    gdb
+    # gdb
     valgrind
     file
     nvtopPackages.full
@@ -123,7 +123,7 @@
     pureref
     arduino-cli
     kicad
-    wideriver
+    # wideriver
     cmus
     doxygen
     ngrok
@@ -132,8 +132,9 @@
     sqlite
     rpi-imager
     zip
-    dwl
+    # dwl
 	cpulimit
+	# inputs.pinnacle.devShell.x86_64-linux.default
   ];
 
   services.udev.packages = with pkgs; [
