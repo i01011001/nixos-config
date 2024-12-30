@@ -1,0 +1,289 @@
+
+.titlebar-spacer {
+  display     : none !important;
+}
+
+#back-button
+{
+  -moz-box-ordinal-group: 0 !important;
+  order: -1 !important;
+  margin: 0px !important;
+}
+
+/* Menu button */
+#PanelUI-button {
+  -moz-box-ordinal-group: 0 !important;
+  order: -2 !important;
+  margin: px !important;
+  /* display: none !important; */
+}
+
+
+/* Extensions button */
+#unified-extensions-button {
+  -moz-box-ordinal-group: 0 !important;
+  order: -3 !important;
+  margin: 0px !important;
+ }
+
+/* Window control buttons (min, resize and close) */
+.titlebar-buttonbox-container {
+  display: none !important;
+  margin-right: 12px !important;
+}
+
+/* Page back and foward buttons */
+/*#back-button,*/
+#forward-button
+{
+  display: none !important
+}
+
+/* Extension name inside URL bar */
+#identity-box.extensionPage #identity-icon-label {
+  visibility: collapse !important
+}
+
+/* All tabs (v-like) button */
+#alltabs-button {
+  display: none !important
+}
+
+/* URL bar icons */
+#identity-permission-box,
+#star-button-box,
+#identity-icon-box,
+#picture-in-picture-button,
+#tracking-protection-icon-container,
+#reader-mode-button,
+#translations-button
+{
+  display: none !important
+}
+
+#urlbar .search-one-offs {
+  display: none !important
+}
+
+/* --- ~END~ element visibility section --- */
+
+/* Navbar size calc */
+:root{
+  --tab-border-radius: 1px !important; /*  Tab border radius -- Changes the tabs rounding  *//*  Default: 6px  */
+  --NavbarWidth: 43; /*  Default values: 36 - 43  */
+  --TabsHeight: 30; /*  Minimum: 30  *//*  Default: 36  */
+  --TabsBorder: 8; /*  Doesnt do anything on small layout  *//*  Default: 8  */
+--NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))  /*  Only on small layout  *//*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  *//*  Default as a number: 44  */}
+
+@media screen and (min-width:1325px)    /*  Only the tabs space will grow from here  */
+{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px)!important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(1325px / 100 * var(--NavbarWidth)) !important} #nav-bar{margin-right: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important}}
+
+@media screen and (min-width:700px) and (max-width:1324px)    /*  Both the tabs space and the navbar will grow  */
+{:root #nav-bar{margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important; height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)} #TabsToolbar{margin-left: calc(var(--NavbarWidth) * 1vw) !important} #nav-bar{margin-right: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important; vertical-align: center !important} #urlbar-container{min-width: 0px !important;  flex: auto !important} toolbarspring{display: none !important} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+
+@media screen and (max-width:699px)    /*  The window is not enough wide for a one line layout  */
+{:root #nav-bar{padding: 0 5px 0 5px!important; height: calc(var(--NavbarHeightSmall) * 1px) !important} toolbarspring{display: none !important;} #TabsToolbar, #nav-bar{transition: margin-top .25s !important}}
+#nav-bar, #PersonalToolbar{background-color: #0000 !important;background-image: none !important; box-shadow: none !important} #nav-bar{margin-left: 3px;} .tab-background, .tab-stack { min-height: calc(var(--TabsHeight) * 1px) !important}
+
+/*  Removes urlbar border/background  */
+#urlbar-background {
+  border: none !important;
+  outline: none !important;
+  transition: .15s !important;
+}
+
+/*  Removes the background from the urlbar while not in use  */
+#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
+  box-shadow: none !important;
+  background: #0000 !important;
+}
+
+/*  Removes annoying border  */
+#navigator-toolbox {
+  border: none !important;
+}
+
+/*/* Fades window while not in focus */*/
+/*#navigator-toolbox-background:-moz-window-inactive {*/
+/*  filter: contrast(90%)*/
+/*}*/
+
+/* Remove fullscreen warning border */
+#fullscreen-warning {
+  border: none !important;
+  background: -moz-Dialog !important;
+}
+
+/*  Tabs close button  */
+.tabbrowser-tab:not(:hover) .tab-close-button {
+  opacity: 0% !important;
+  transition: 0.3s !important;
+  display: -moz-box !important;
+}
+.tab-close-button[selected]:not(:hover) {
+  opacity: 45% !important;
+  transition: 0.3s !important;
+  display: -moz-box !important;
+}
+.tabbrowser-tab:hover .tab-close-button {
+  opacity: 50%;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
+.tab-close-button:hover {
+  opacity: 100% !important;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
+.tab-close-button[selected]:hover {
+  opacity: 100% !important;
+  transition: 0.3s !important;
+  background: none !important;
+  cursor: pointer;
+  display: -moz-box !important;
+}
+
+body, html { padding: 0; margin: 0; }
+iframe { width: 100vw; height: 100vh; }
+.elementor-background-overlay {
+  background-color: #000000;
+  background-image: url(https://framedelaframe.at/wp-content/uploads/2022/10/FDLF-Punkt-.png);
+  background-position: 86vw 10vh;
+  opacity: 1;
+  mix-blend-mode: darken;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+  filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.elementor-background-overlay:hover {
+  opacity: 0;
+}
+
+
+
+
+
+/*-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#TabsToolbar {
+  max-width: none !important;
+  min-width: 0px !important;
+}
+  
+#verticaltab-splitter {
+  display: none !important;
+}
+  
+/*shared*/
+#TabsToolbar-customization-target {
+  position: relative !important;
+  clip-path: inset(0) !important;
+  z-index: 1 !important;
+  transition-delay: 0.2s !important;
+}
+  
+:root {
+  --default-vertitaltab-width: 45px;
+  --hoverd-verticaltab-width: 20em;
+}
+
+:root[uidensity=compact]{
+  --default-vertitaltab-width: 35px !important;
+}
+
+:root[uidensity=touch]{
+  --default-vertitaltab-width: 60px !important;
+}
+  
+/*close*/
+#TabsToolbar {
+  --hovering-verticaltab-width: calc( var(--default-vertitaltab-width) + 12px);
+  width: var(--default-vertitaltab-width) !important;
+  transition-delay: 0.2s !important;
+}
+
+#TabsToolbar:not(:hover) #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab:not([visuallyselected]) .tab-content[class] > .tab-close-button[class] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#TabsToolbar:not(:hover) #tabbrowser-tabs[closebuttons="activetab"] .tabbrowser-tab .tab-content[class] > .tab-close-button[class] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#TabsToolbar:not(:hover) .tab-label-container {
+  display: none !important;
+}
+
+#TabsToolbar:not(:hover) #TabsToolbar-customization-target > .toolbarbutton-1 > .toolbarbutton-text {
+  display: none !important;
+}
+
+#TabsToolbar:not(:hover) .tab-icon-stack {
+  padding-left: 10px;
+}
+
+#TabsToolbar:not(:hover) .tab-content {
+  --inline-tab-padding:0px !important;
+  padding-inline: 0px !important;
+}
+
+#sidebar-box .tabbrowser-tab{
+  margin-right: 1px !important;
+  margin-left: 1px !important;
+}
+  
+/*open*/
+#TabsToolbar:hover {
+  --hovering-verticaltab-width: var(--hoverd-verticaltab-width) !important; 
+  transition: all 200ms !important;
+  transition-delay: 0.2s !important;
+  z-index: 100 !important;
+  width: 250px !important;
+}
+  
+/*left*/
+#TabsToolbar:not([positionend="true"]):hover {
+  margin-right: calc((var(--hoverd-verticaltab-width) - var(--default-vertitaltab-width) + 10px) * -1) !important;
+}
+  
+/*right*/
+#TabsToolbar[positionend="true"]:hover {
+  margin-left: calc((var(--hoverd-verticaltab-width) - var(--default-vertitaltab-width) + 10px) * -1) !important;
+}
+  
+/* if tab doesn't have an icon, make sure it still has tab icon */
+
+.tab-icon-image:not([src], [busy]) {
+  width: 16px !important;
+  height: 16px !important;
+  display: inherit !important;
+}
+
+#tabbrowser-tabs[positionpinnedtabs] > #tabbrowser-arrowscrollbox > .tabbrowser-tab[pinned] {
+  min-width: -moz-available !important;
+}
+
+.tab-icon-stack[pinned="true"] {
+  margin-inline-end: 5.5px;
+}
+
+.tab-label-container[pinned="true"][flex] {
+  display: inherit !important;
+}
+
+:root[uidensity] .tabbrowser-tab[context][class], .tabbrowser-tab[context][class] {
+  min-width: -moz-available !important;
+}
+

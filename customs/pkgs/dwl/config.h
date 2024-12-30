@@ -26,6 +26,7 @@ static int log_level = WLR_ERROR;
 /* Autostart *///overlay
 static const char *const autostart[] = {
         "swaybg", "-i" ,"/etc/nixos/customs/pkgs/dwl/simple-nix-black.png", "-m", "center", NULL,
+		"wlr-randr", "--output", "HDMI-A-2", "--pos", "-1400,0", NULL,
 		"mako" ,NULL, 
         NULL /* terminate */
 };

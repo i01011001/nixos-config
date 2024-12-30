@@ -1,0 +1,266 @@
+
+# monitor=,preferred,auto,1
+monitor = eDP-1, 1920x1080@144, 0x0, 1
+# monitor = HDMI-A-2,1440x900,1920x0,1
+# monitor = HDMI-A-1,1440x900,-1440x0,1
+# monitor = HDMI-A-1,2560x1440,1920x0,1
+
+# Set programs that you use
+$terminal = alacritty
+$fileManager = thunar 
+# $menu = rofi -show drun
+# $browser = floorp
+# exec-once = waybar & hyprpaper & firefox
+exec-once = mako 
+
+
+cursor {
+	inactive_timeout = 3
+		hide_on_key_press = true
+		hide_on_touch = true
+}
+
+general {
+	gaps_in = 4
+		gaps_out = 3
+		border_size = 1
+		col.active_border = rgba(676767ff)
+		col.inactive_border = rgba(404040ff)
+
+		resize_on_border = false
+		no_focus_fallback = false 
+		allow_tearing = false 
+		layout = hy3
+		snap {
+			enabled = true
+		}
+}
+
+master {
+	mfact = 0.6
+		new_status = slave
+		new_on_top = false
+		new_on_active = none
+		allow_small_split = true
+		special_scale_factor = 0.6
+}
+
+dwindle {
+	pseudotile = true 
+		preserve_split = true
+}
+
+decoration {
+	rounding = 3
+		active_opacity = 1.0
+		inactive_opacity = 1.0
+
+# drop_shadow = false 
+
+		blur {
+			enabled = false
+		}
+
+# dim_inactive = true
+# dim_strength = .2
+}
+
+animations {
+	enabled = false
+		first_launch_animation = false;
+}
+
+
+misc {
+	# force_default_wallpaper = 1 # Set to 0 or 1 to disable the anime mascot wallpapers
+	# 	disable_hyprland_logo = true# If true disables the random hyprland logo / anime girl background. :(
+				enable_swallow = false
+				swallow_regex =^(foot|alacritty)$
+				mouse_move_focuses_monitor = false
+				# background_color = 0x000000
+				font_family = "Iosevka Nerd Font Mono"
+				splash_font_family = "Iosevka Nerd Font Mono"
+				render_ahead_of_time = true
+				reader_ahead_safezone = 2
+				}
+
+				# debug {
+				# disable_logs = true
+				# }
+
+				input {
+				repeat_delay = 300
+				repeat_rate = 50
+				kb_layout = us
+
+				follow_mouse = 1
+
+				sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+
+				touchpad {
+					disable_while_typing = true
+						natural_scroll = true 
+				}
+				}
+
+gestures {
+	workspace_swipe = false
+}
+
+render {
+	explicit_sync = 1
+		explicit_sync_kms = 1
+}
+
+$mainMod = SUPER 
+
+bind = $mainMod SHIFT, Return, exec, $terminal
+# bind = $mainMod SHIFT, F, exec, $browser
+bind = $mainMod, R, exec, $menu
+bind = $mainMod SHIFT, C, killactive,
+	 bind = $mainMod SHIFT, Q, exit,
+
+# Screenshot
+	 bind = , PRINT, exec, grim - | swappy -f -
+	 bind = SHIFT, PRINT, exec, grim -g "$(slurp)" -| swappy -f - 
+
+
+# bind = $mainMod, Space, settiled,
+	 bind = $mainMod CONTROL, F, fullscreen, 2
+	 bind = $mainMod CONTROL, M, fullscreen, 1
+	 bind = $mainMod, Space, togglefloating
+
+	 bind = $mainMod, S, togglespecialworkspace, magic
+	 bind = $mainMod SHIFT, S, movetoworkspace, special:magic
+
+	 bind = $mainMod, mouse_down, workspace, e+1
+	 bind = $mainMod, mouse_up, workspace, e-1
+
+	 bindm = $mainMod, mouse:272, movewindow
+	 bindm = $mainMod, mouse:273, resizewindow
+
+
+	 bindel = $mainMod CONTROL, B, exec, notify-send "Capacity" "`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`"
+	 bindel = $mainMod CONTROL, V, exec, notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"
+	 bindel = $mainMod CONTROL, C, exec, notify-send  "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`"
+	 bindel = $mainMod CONTROL, X, exec, notify-send "Brightness"  "`brightnessctl g`"
+
+### volume
+	 bindel = ,XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+	 bindel = ,XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+	 bindel = ,XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+	 bindel = ,XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+### brightness
+	 bind = ,XF86MonBrightnessUp, exec, brightnessctl s 10%+ 
+	 bind = ,XF86MonBrightnessDown, exec, brightnessctl s 10%- 
+
+	 plugin {
+		 split-monitor-workspaces {
+			 count = 9
+				 keep_focused = 0
+				 enable_notifications = 0
+				 enable_persistent_workspaces = 1
+		 }
+
+		 hy3 {
+			 no_gaps_when_only = 0 
+				 node_collapse_policy = 2
+				 group_inset = 10
+				 tab_first_window = false
+				 tabs {
+					 height = 5
+						 padding = 5
+						 from_top = false
+						 rounding = 2
+
+						 render_text = false
+						 text_center = false
+						 text_font = Iosevka Nerd Font Mono
+						 text_height = 8
+						 text_padding = 3
+
+						 col.active = 0xff32b4ff
+						 col.urgent =  0xffff4f4f
+						 col.inactive =0x80808080 
+
+# active tab bar text color
+						 col.text.active = 0xff000000 
+						 col.text.urgent = 0xff000000  
+						 col.text.inactive = 0xff000000 
+				 }
+
+			 autotile {
+				 enable = false
+					 ephemeral_groups = true
+					 trigger_width = 0
+					 trigger_height = 0
+					 workspaces = all
+			 }
+		 }
+
+	 }
+
+#hy3
+bind = $mainMod, o, hy3:makegroup, h
+bind = $mainMod, i, hy3:makegroup, v
+
+bind = $mainMod, j, hy3:movefocus, down, visible, warp
+bind = $mainMod, k, hy3:movefocus, up, visible, warp
+bind = $mainMod, h, hy3:movefocus, left, visible, warp
+bind = $mainMod, l, hy3:movefocus, right, visible, warp
+
+bind = $mainMod+CONTROL, j, hy3:movefocus, down
+bind = $mainMod+CONTROL, k, hy3:movefocus, up
+bind = $mainMod+CONTROL, h, hy3:movefocus, left
+bind = $mainMod+CONTROL, l, hy3:movefocus, right
+
+bind = $mainMod SHIFT, l, hy3:movewindow, right, once, visible
+bind = $mainMod SHIFT, h, hy3:movewindow, left, once, visible
+bind = $mainMod SHIFT, j, hy3:movewindow, down, once, visible
+bind = $mainMod SHIFT, k, hy3:movewindow, up, once, visible
+
+bind = $mainMod+CONTROL+SHIFT, h, hy3:movewindow, l, once
+bind = $mainMod+CONTROL+SHIFT, j, hy3:movewindow, d, once
+bind = $mainMod+CONTROL+SHIFT, k, hy3:movewindow, u, once
+bind = $mainMod+CONTROL+SHIFT, l, hy3:movewindow, r, once
+
+# bind = $mainMod CONTROL, j, hy3:changefocus, bottom
+# bind = $mainMod CONTROL, k, hy3:changefocus, top
+# bind = $mainMod CONTROL, l, hy3:changefocus, lower
+# bind = $mainMod CONTROL, h, hy3:changefocus, raise
+# bind = $mainMod CONTROL, semicolon, hy3:changefocus, tab
+# bind = $mainMod CONTROL, quote, hy3:changefocus, quote
+
+bind = $mainMod, z, hy3:makegroup, tab
+bind = $mainMod, semicolon, hy3:changefocus, raise
+bind = $mainMod+SHIFT, semicolon, hy3:changefocus, lower
+bind = $mainMod, u, hy3:changegroup, opposite
+
+bind = $mainMod SHIFT, space, hy3:togglefocuslayer
+
+bind = $mainMod, 1, split-workspace, 1
+bind = $mainMod, 2, split-workspace, 2
+bind = $mainMod, 3, split-workspace, 3
+bind = $mainMod, 4, split-workspace, 4
+bind = $mainMod, 5, split-workspace, 5
+bind = $mainMod, 6, split-workspace, 6
+bind = $mainMod, 7, split-workspace, 7
+bind = $mainMod, 8, split-workspace, 8
+bind = $mainMod, 9, split-workspace, 9
+
+bind = $mainMod SHIFT, 1, split-movetoworkspacesilent, 1
+bind = $mainMod SHIFT, 2, split-movetoworkspacesilent, 2
+bind = $mainMod SHIFT, 3, split-movetoworkspacesilent, 3
+bind = $mainMod SHIFT, 4, split-movetoworkspacesilent, 4
+bind = $mainMod SHIFT, 5, split-movetoworkspacesilent, 5
+bind = $mainMod SHIFT, 6, split-movetoworkspacesilent, 6
+bind = $mainMod SHIFT, 7, split-movetoworkspacesilent, 7
+bind = $mainMod SHIFT, 8, split-movetoworkspacesilent, 8
+bind = $mainMod SHIFT, 9, split-movetoworkspacesilent, 9
+
+bind = $mainMod, Period, focusmonitor, r
+bind = $mainMod, Comma, focusmonitor, l
+
+bind = $mainMod SHIFT, Period, movewindow, mon:r
+bind = $mainMod SHIFT, Comma, movewindow, mon:l
