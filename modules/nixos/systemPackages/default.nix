@@ -21,13 +21,12 @@
     (import ../../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
 
-    (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
+    # (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
+    # (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
+    # (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
+    # (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
 
-    (import ../../../customs/wideriver/default.nix {inherit pkgs;})
-
+    # (import ../../../customs/wideriver/default.nix {inherit pkgs;})
 
     websocat
     mosquitto
@@ -35,8 +34,8 @@
     tree
     dconf
     unzip
-    lua
     luajit
+	luarocks
     nodejs_22
     ntfs3g
     cargo
@@ -46,12 +45,14 @@
     gperf
     # (python3.withPackages(ps: with ps; [ pip pyserial psutil west torch torchaudio torchvision]))
     # (python310.withPackages(ps: with ps; [ pip lark stringcase jinja2 urllib3]))
-    python3
+    python310
     ninja
     ccache
     dfu-util
     cmake
     gcc
+	clang
+	clang-tools
     gnumake
     zig
     brightnessctl
@@ -78,6 +79,7 @@
     swappy
 	wl-screenrec
     wlopm
+	waylock
 
     #### NRF
     nrf-command-line-tools
@@ -132,8 +134,11 @@
     sqlite
     rpi-imager
     zip
-    # dwl
+    dwl
 	cpulimit
+	libsixel
+	# kitty
+	# xclip
 	# inputs.pinnacle.devShell.x86_64-linux.default
   ];
 

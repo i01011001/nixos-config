@@ -54,8 +54,8 @@ static const Layout layouts[] = {
 /* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
 static const MonitorRule monrules[] = {
 	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
-	{ "eDP-1",    0.6f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
-	{ "HDMI-A-2",    0.6f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ "eDP-1",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ "HDMI-A-2",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 	/* defaults */
 	// { NULL,       0.6f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
@@ -128,7 +128,7 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "alacritty", NULL };
+static const char *termcmd[] = { "foot", NULL };
 static const char *menucmd[] = { "tofi-drun", NULL };
 
 static const char *volumeup[] = { "volumeup", NULL };
@@ -154,21 +154,22 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_l,          focusto,        {.i = 3} },//		
 	{ MODKEY,                    XKB_KEY_semicolon,  focusto,        {.i = 4} },//		
 	{ MODKEY,                    XKB_KEY_apostrophe, focusto,        {.i = -1} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_h,          swapstack,      {.i = 0} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_j,          swapstack,      {.i = 1} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_k,          swapstack,      {.i = 2} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_l,          swapstack,      {.i = 3} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_semicolon,  swapstack,      {.i = 4} },//		
-	{ MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_apostrophe, swapstack, {.i = -1} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_h,          swapstack,      {.i = 0} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_j,          swapstack,      {.i = 1} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_k,          swapstack,      {.i = 2} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_l,          swapstack,      {.i = 3} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_semicolon,  swapstack,      {.i = 4} },//		
+	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_apostrophe, swapstack,		{.i = -1} },//		
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_J,          relativeswap,   {.i = +1} },//
- 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_K,          relativeswap,   {.i = -1} },//overlay																			 
+		{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_K,         relativeswap,   {.i = -1} },//overlay																			 
+	
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_H,          setmfact,       {.f = -0.05f} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_L,          setmfact,       {.f = +0.05f} },
-
 	// { MODKEY,                    XKB_KEY_z,          incnmaster,     {.i = +1} },
 	// { MODKEY,                    XKB_KEY_z,          incnmaster,     {.i = -1} },
-	{ MODKEY,                    XKB_KEY_z,          focusstack,     {.i = +1} },
-	// { MODKEY,                    XKB_KEY_z,          focusstack,     {.i = -1} },
+	// { MODKEY,                    XKB_KEY_j,          focusstack,     {.i = +1} },
+	// { MODKEY,                    XKB_KEY_k,          focusstack,     {.i = -1} },
+	// { MODKEY,                    XKB_KEY_h,          focusstack,     {.i = 0} },
 	{ MODKEY,                    XKB_KEY_Return,     zoom,           {0} },
 	{ MODKEY,                    XKB_KEY_Tab,        view,           {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_C,          killclient,     {0} },

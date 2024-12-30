@@ -79,7 +79,7 @@
           ../customs/pkgs/dwl/dwl-patches/pertag.patch
           ../customs/pkgs/dwl/dwl-patches/restoretiling.patch # only after pertag
           ../customs/pkgs/dwl/dwl-patches/autostart.patch
-          ../customs/pkgs/dwl/dwl-patches/minimalborders.patch
+          # ../customs/pkgs/dwl/dwl-patches/minimalborders.patch
           ../customs/pkgs/dwl/dwl-patches/unclutter.patch
           ../customs/pkgs/dwl/dwl-patches/alwayscenter.patch
           ../customs/pkgs/dwl/dwl-patches/stacker.patch

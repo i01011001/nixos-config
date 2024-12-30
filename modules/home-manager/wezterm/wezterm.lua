@@ -14,8 +14,8 @@ config.font_size = 10.0
 config.enable_tab_bar = false
 
 config.default_cursor_style = "SteadyBlock"
-config.animation_fps= 2
--- config.max_fps  = 120
+config.animation_fps= 30
+config.max_fps  = 120
 config.window_close_confirmation = "NeverPrompt"
 config.hide_mouse_cursor_when_typing = false
 config.window_padding = {
@@ -47,7 +47,7 @@ config.window_frame = {
   border_bottom_color = 'black',
   border_top_color = 'black',
 }
-config.enable_wayland = false
+config.enable_wayland = true 
 
 -- config.webgpu_preferred_adapter = {
 --         backend= "Vulkan",

@@ -27,7 +27,7 @@ riverctl map normal Super+Control C spawn 'notify-send  "`date +%H:%M`" "`date +
 riverctl map normal Super+Control V spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' 
 riverctl map normal Super+Control X spawn 'notify-send "Brightness"  "`brightnessctl g`"'
 riverctl map normal Super+Shift C close
-riverctl map normal Super+Shift Comma send-to-output previous
+riverctl map normal Super+Shift Comma send-to-output left
 riverctl map normal Super+Control F11 spawn 'brightnessctl set 5%-'
 riverctl map normal Super+Control F12 spawn 'brightnessctl set 5%+'
 riverctl map normal Super+Control F6 spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
@@ -36,9 +36,9 @@ riverctl map normal Super+Control F8 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%+ 
 riverctl map normal Super+Shift J swap next
 riverctl map normal Super+Shift K swap previous
 riverctl map normal Super+Shift P spawn 'grim -g "$(slurp)" -| swappy -f -' 
-riverctl map normal Super+Shift Period send-to-output next
+riverctl map normal Super+Shift Period send-to-output right
 riverctl map normal Super+Shift Q exit
-riverctl map normal Super+Shift Return spawn alacritty
+riverctl map normal Super+Shift Return spawn foot
 riverctl map normal Super+Control F toggle-fullscreen
 riverctl set-repeat 60 280
 

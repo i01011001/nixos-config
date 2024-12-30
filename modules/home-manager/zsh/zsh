@@ -77,5 +77,3 @@ function chpwd-osc7-pwd() {
 }
 
 add-zsh-hook -Uz chpwd chpwd-osc7-pwd
-
-#

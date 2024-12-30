@@ -16,7 +16,6 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
     # gBar.url = "github:i01011001/gBar";
-
   };
 
   outputs =

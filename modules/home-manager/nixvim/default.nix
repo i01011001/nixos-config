@@ -20,8 +20,8 @@ in
 			./config/plugins/web-devicons
 			./config/plugins/diffview
 			./config/plugins/surround
-			./config/plugins/colorizer
 			./config/plugins/cmp
+			# ./config/plugins/colorizer
 			# ./config/plugins/blink
 			# ./config/plugins/fzf-lua
 # ./config/plugins/gitsigns

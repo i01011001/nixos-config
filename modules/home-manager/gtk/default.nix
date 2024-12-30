@@ -26,14 +26,14 @@
       name = "Adwaita";
     };
     gtk3 = {
-      extraCss = builtins.readFile ./gtk.css;
+      # extraCss = builtins.readFile ./gtk.css;
       extraConfig = {
         gtk-dialogs-use-header = false;
         gtk-application-prefer-dark-theme = true;
       };
     };
     gtk4 = {
-      extraCss = builtins.readFile ./gtk.css;
+      # extraCss = builtins.readFile ./gtk.css;
 
       extraConfig = {
         gtk-dialogs-use-header = false;

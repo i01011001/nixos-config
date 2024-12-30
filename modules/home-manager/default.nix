@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    ./alacritty
     ./direnv
     ./nixvim
     ./ripgrep
@@ -21,11 +20,15 @@
     ./git
     ./tofi
     ./mako
-    ./river
-    # ./sway
+	./swappy
+    ./foot
     # ./hypr
+	# ./ghostty
+    ./river
+	# ./awesome
     # ./wezterm
-    # ./foot
+    # ./alacritty
+    # ./sway
     # ./qutebrowser
   ];
 }
