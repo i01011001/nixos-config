@@ -1,7 +1,7 @@
 {
   services.mako = {
     enable = true;
-	extraConfig = builtins.readFile ./config;
+    extraConfig = builtins.readFile ./config;
   };
 
 }

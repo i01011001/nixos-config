@@ -73,19 +73,21 @@
     })
 
     (self: super: {
-      dwl = (super.dwl.overrideAttrs (oldAttrs: rec {
-        patches = [
-          ../customs/pkgs/dwl/dwl-patches/attachbottom.patch
-          ../customs/pkgs/dwl/dwl-patches/pertag.patch
-          ../customs/pkgs/dwl/dwl-patches/restoretiling.patch # only after pertag
-          ../customs/pkgs/dwl/dwl-patches/autostart.patch
-          # ../customs/pkgs/dwl/dwl-patches/minimalborders.patch
-          ../customs/pkgs/dwl/dwl-patches/unclutter.patch
-          ../customs/pkgs/dwl/dwl-patches/alwayscenter.patch
-          ../customs/pkgs/dwl/dwl-patches/stacker.patch
-          ../customs/pkgs/dwl/dwl-patches/zoomswap.patch
-        ];
-      })).override { configH = ../customs/pkgs/dwl/config.h; };
+      dwl =
+        (super.dwl.overrideAttrs (oldAttrs: rec {
+          patches = [
+            ../customs/pkgs/dwl/dwl-patches/attachbottom.patch
+            ../customs/pkgs/dwl/dwl-patches/pertag.patch
+            ../customs/pkgs/dwl/dwl-patches/restoretiling.patch # only after pertag
+            ../customs/pkgs/dwl/dwl-patches/autostart.patch
+            # ../customs/pkgs/dwl/dwl-patches/minimalborders.patch
+            ../customs/pkgs/dwl/dwl-patches/unclutter.patch
+            ../customs/pkgs/dwl/dwl-patches/alwayscenter.patch
+            ../customs/pkgs/dwl/dwl-patches/stacker.patch
+            ../customs/pkgs/dwl/dwl-patches/zoomswap.patch
+          ];
+        })).override
+          { configH = ../customs/pkgs/dwl/config.h; };
     })
   ];
 }

@@ -30,11 +30,11 @@
     # nvidiaPersistenced = true;
     # modesetting.enable = true;
     # forceFullCompositionPipeline = true;
-# powerManagement.enable = false;
-# powerManagement.finegrained = false;
-# nvidiaSettings = true;
-	  open = false;
-	  package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # powerManagement.enable = false;
+    # powerManagement.finegrained = false;
+    # nvidiaSettings = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
   };
 }

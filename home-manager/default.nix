@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  imports = [ 
+  imports = [
     ./direnv
     ./nixvim
     ./ripgrep
@@ -15,12 +15,12 @@
     ./git
     ./tofi
     ./mako
-	./swappy
+    ./swappy
     ./foot
     # ./hypr
-	# ./ghostty
+    # ./ghostty
     # ./river
-	# ./awesome
+    # ./awesome
     # ./wezterm
     # ./alacritty
     # ./sway

@@ -1,8 +1,8 @@
 {
-	programs.zsh = {
-		enable = true;
-		enableCompletion = false;
-		enableLsColors = false;
-		autosuggestions.async = false;
-	};
+  programs.zsh = {
+    enable = true;
+    enableCompletion = false;
+    enableLsColors = false;
+    autosuggestions.async = false;
+  };
 }

@@ -28,6 +28,8 @@
 
     # (import ../../../customs/wideriver/default.nix {inherit pkgs;})
 
+    inputs.rio.packages.x86_64-linux.default
+
     websocat
     mosquitto
     rlwrap
@@ -35,7 +37,7 @@
     dconf
     unzip
     luajit
-	luarocks
+    luarocks
     nodejs_22
     ntfs3g
     cargo
@@ -51,8 +53,8 @@
     dfu-util
     cmake
     gcc
-	clang
-	clang-tools
+    clang
+    clang-tools
     gnumake
     zig
     brightnessctl
@@ -77,9 +79,9 @@
     swayimg
     swaybg
     swappy
-	wl-screenrec
+    wl-screenrec
     wlopm
-	waylock
+    waylock
 
     #### NRF
     nrf-command-line-tools
@@ -135,11 +137,11 @@
     rpi-imager
     zip
     dwl
-	cpulimit
-	libsixel
-	# kitty
-	# xclip
-	# inputs.pinnacle.devShell.x86_64-linux.default
+    cpulimit
+    libsixel
+    # kitty
+    # xclip
+    # inputs.pinnacle.devShell.x86_64-linux.default
   ];
 
   services.udev.packages = with pkgs; [

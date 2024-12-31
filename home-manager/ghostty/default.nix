@@ -1,6 +1,6 @@
 {
-	xdg.configFile."ghostty" = {
-		source = ./ghostty;
-		recursive =  true;
-	};
+  xdg.configFile."ghostty" = {
+    source = ./ghostty;
+    recursive = true;
+  };
 }
