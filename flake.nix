@@ -14,10 +14,6 @@
     };
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-
-    rio.url = "github:raphamorim/rio";
-
-    # gBar.url = "github:i01011001/gBar";
   };
 
   outputs =
@@ -45,9 +41,6 @@
               users.${username} = {
                 imports = [
                   ./home-manager
-                  # ./modules/home-manager/hypr
-                  # inputs.gBar.homeManagerModules.x86_64-linux.default
-
                 ];
               };
             };

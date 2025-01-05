@@ -3,33 +3,33 @@
   environment.systemPackages = with pkgs; [
 
     # (import ../../../customs/pkgs/river-ultitile {inherit pkgs;})
-    (import ../../customs/pkgs/miniterm { inherit pkgs; })
-    (import ../../customs/pkgs/modpoll { inherit pkgs; })
-    (import ../../customs/pkgs/diagslave { inherit pkgs; })
+    (import ../../../customs/pkgs/miniterm { inherit pkgs; })
+    (import ../../../customs/pkgs/modpoll { inherit pkgs; })
+    (import ../../../customs/pkgs/diagslave { inherit pkgs; })
 
-    (import ../../customs/pkgs/shortcuts/control/volumeup.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/control/volumedown.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/control/volumemute.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/control/brightnessup.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/control/brightnessdown.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumeup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumedown.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/volumemute.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/brightnessup.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/control/brightnessdown.nix { inherit pkgs; })
 
-    (import ../../customs/pkgs/shortcuts/notify/volume.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/notify/time.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/notify/battery.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/notify/brightness.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/volume.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/time.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/battery.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/notify/brightness.nix { inherit pkgs; })
 
-    (import ../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
-    (import ../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
 
     # (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
     # (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
     # (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
     # (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
 
-    # (import ../../../customs/wideriver/default.nix {inherit pkgs;})
 
-    inputs.rio.packages.x86_64-linux.default
+    # inputs.rio.packages.x86_64-linux.default
 
+	# wideriver
     websocat
     mosquitto
     rlwrap
@@ -59,7 +59,6 @@
     zig
     brightnessctl
     libnotify
-    zathura
     unrar
     mpv
     # blender
@@ -84,8 +83,8 @@
     waylock
 
     #### NRF
-    nrf-command-line-tools
-    segger-jlink
+    # nrf-command-line-tools
+    # segger-jlink
     # nrfconnect
 
     skypeforlinux
@@ -115,7 +114,7 @@
     imagemagick
     postman
 
-    # gdb
+    gdb
     valgrind
     file
     nvtopPackages.full
@@ -139,6 +138,7 @@
     dwl
     cpulimit
     libsixel
+	# opentabletdriver
     # kitty
     # xclip
     # inputs.pinnacle.devShell.x86_64-linux.default
@@ -146,7 +146,8 @@
 
   services.udev.packages = with pkgs; [
     saleae-logic-2
-    segger-jlink
+	# opentabletdriver
+    # segger-jlink
     stlink
   ];
 }

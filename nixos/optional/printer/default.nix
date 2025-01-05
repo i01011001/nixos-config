@@ -5,8 +5,8 @@
     cups-pdf.enable = true;
     drivers = [
       # (pkgs.callPackage ../pkgs/driver/dcpj125.nix {inherit pkgs;})
-      (import ../../customs/driver/dcpj125.nix { inherit pkgs; }).driver
-      (import ../../customs/driver/dcpj125.nix { inherit pkgs; }).cupswrapper
+      (import ../../../customs/driver/dcpj125.nix { inherit pkgs; }).driver
+      (import ../../../customs/driver/dcpj125.nix { inherit pkgs; }).cupswrapper
     ];
   };
 

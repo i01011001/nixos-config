@@ -11,7 +11,8 @@
         colors = {
           # alpha = 1;
           background = "000000";
-          foreground = "f0f0f0";
+          foreground = "E0E0E0";
+
           regular0 = "303030";
           regular1 = "bf656E";
           regular2 = "83ad84";
@@ -28,9 +29,11 @@
           bright4 = "6286ad";
           bright5 = "8782af";
           bright6 = "7dafac";
-          bright7 = "ffffff";
-
+          bright7 = "d0d0d0";
         };
+		scrollback = {
+				lines = 4096;
+			};
       };
     };
   };

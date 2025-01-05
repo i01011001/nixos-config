@@ -77,3 +77,7 @@ function chpwd-osc7-pwd() {
 }
 
 add-zsh-hook -Uz chpwd chpwd-osc7-pwd
+
+precmd() {
+    print -Pn "\e]133;A\e\\"
+}

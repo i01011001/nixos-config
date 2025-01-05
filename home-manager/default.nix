@@ -1,28 +1,32 @@
 { lib, ... }:
 {
   imports = [
-    ./direnv
-    ./nixvim
-    ./ripgrep
-    ./fd
-    ./fzf
-    ./zsh
-    ./cursor
-    ./gtk
-    ./yazi
-    ./btop
-    ./floorp
-    ./git
-    ./tofi
-    ./mako
-    ./swappy
-    ./foot
+### core
+    ./core/gtk
+    ./core/fd
+    ./core/fzf
+    ./core/zsh
+    ./core/git
+    ./core/ripgrep
+
+### optional
+    ./optional/direnv
+    ./optional/nixvim
+    ./optional/cursor
+    ./optional/yazi
+    ./optional/btop
+    ./optional/floorp
+    ./optional/tofi
+    ./optional/mako
+    ./optional/swappy
+    ./optional/foot
+    ./optional/zathura
+    # ./optional/river
+	# ./optional/alacritty
     # ./hypr
     # ./ghostty
-    # ./river
     # ./awesome
     # ./wezterm
-    # ./alacritty
     # ./sway
     # ./qutebrowser
   ];
