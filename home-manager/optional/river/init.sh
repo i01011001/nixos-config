@@ -2,12 +2,25 @@ riverctl background-color 0x000000
 riverctl default-attach-mode bottom
 riverctl hide-cursor timeout 3600
 riverctl hide-cursor when-typing enabled
+riverctl set-repeat 60 280
+
+riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad tap enabled
+riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad natural-scroll enabled
+
+riverctl declare-mode passthrough
+
+riverctl set-cursor-warp on-focus-change 
+
+riverctl tablet-1386-884-Wacom_Intuos_S_Pen map-to-output eDP-1
+
 riverctl map normal Super Comma focus-output left
-riverctl map normal Super J focus-view -skip-floating next
-riverctl map normal Super K focus-view -skip-floating previous
-riverctl map normal Super P spawn 'grim -| swappy -f -' 
+riverctl map normal Super N focus-view -skip-floating next
+riverctl map normal Super P focus-view -skip-floating previous
+riverctl map normal Super K focus-view -skip-floating up
+riverctl map normal Super J focus-view -skip-floating down
+riverctl map normal Super H focus-view -skip-floating left 
+riverctl map normal Super L focus-view -skip-floating right 
 riverctl map normal Super Period focus-output right
-riverctl map normal Super R spawn tofi-drun
 riverctl map normal Super Return zoom
 riverctl map normal Super Space toggle-float
 riverctl map normal Super+Alt H move left 100
@@ -22,31 +35,33 @@ riverctl map normal Super+Alt+Shift H resize horizontal -100
 riverctl map normal Super+Alt+Shift J resize vertical -100
 riverctl map normal Super+Alt+Shift K resize vertical 100
 riverctl map normal Super+Alt+Shift L resize horizontal 100
-riverctl map normal Super+Control B spawn 'notify-send "Capacity" "`echo $(cat /sys/class/power_supply/BAT1/capacity & cat /sys/class/power_supply/BAT1/status)`"'
-riverctl map normal Super+Control C spawn 'notify-send  "`date +%H:%M`" "`date +%A` `date +%d`. `date +%B`" '
-riverctl map normal Super+Control V spawn 'notify-send "Volume" "`wpctl get-volume @DEFAULT_SINK@ | tr -d Volume: `"' 
-riverctl map normal Super+Control X spawn 'notify-send "Brightness"  "`brightnessctl g`"'
 riverctl map normal Super+Shift C close
-riverctl map normal Super+Shift Comma send-to-output left
-riverctl map normal Super+Control F11 spawn 'brightnessctl set 5%-'
-riverctl map normal Super+Control F12 spawn 'brightnessctl set 5%+'
-riverctl map normal Super+Control F6 spawn 'wpctl set-mute @DEFAULT_SINK@ toggle'
-riverctl map normal Super+Control F7 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%- '
-riverctl map normal Super+Control F8 spawn 'wpctl set-volume @DEFAULT_SINK@ 5%+ '
-riverctl map normal Super+Shift J swap next
-riverctl map normal Super+Shift K swap previous
-riverctl map normal Super+Shift P spawn 'grim -g "$(slurp)" -| swappy -f -' 
+riverctl map normal Super+Shift N swap next
+riverctl map normal Super+Shift P swap previous
 riverctl map normal Super+Shift Period send-to-output right
+riverctl map normal Super+Shift Comma send-to-output left
 riverctl map normal Super+Shift Q exit
-riverctl map normal Super+Shift Return spawn foot
 riverctl map normal Super+Control F toggle-fullscreen
-riverctl set-repeat 60 280
+
+riverctl map normal Super+Shift Return spawn foot
+riverctl map normal Super R spawn tofi-drun
+
+riverctl map normal Super+Control F11 spawn 'brightnessdown'
+riverctl map normal Super+Control F12 spawn 'brightnessup'
+
+riverctl map normal Super+Control F6 spawn 'volumemute'
+riverctl map normal Super+Control F7 spawn 'volumedown'
+riverctl map normal Super+Control F8 spawn 'volumeup'
+
+riverctl map normal Super+Control B spawn 'notifybattery'
+riverctl map normal Super+Control C spawn 'notifytime'
+riverctl map normal Super+Control V spawn 'notifyvolume' 
+riverctl map normal Super+Control X spawn 'notifybrightness'
+
+riverctl map normal Super PRINT spawn 'grim -| swappy -f -' 
+riverctl map normal Super+Shift PRINT spawn 'grim -g "$(slurp)" -| swappy -f -' 
 
 ### EXTRA CONFIGURATION ###
-riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad tap enabled
-riverctl input pointer-1267-12632-ELAN050A:01_04F3:3158_Touchpad natural-scroll enabled
-
-riverctl declare-mode passthrough
 riverctl map normal Super F9 enter-mode passthrough
 riverctl map passthrough Super F9 enter-mode normal
 
@@ -76,19 +91,19 @@ riverctl border-color-urgent  "0x444444"
 riverctl border-color-focused "0x444444" 
 riverctl border-color-unfocused "0x444444" 
 
-riverctl map normal Super+Control K spawn layout-top
-riverctl map normal Super+Control L spawn layout-right
-riverctl map normal Super+Control J spawn layout-bottom 
-riverctl map normal Super+Control H spawn layout-left
-riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
-riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
-
-# riverctl map normal Super+Control K send-layout-cmd wideriver "--layout top"
-# riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
-# riverctl map normal Super+Control J send-layout-cmd wideriver "--layout bottom"
-# riverctl map normal Super+Control H send-layout-cmd wideriver "--layout left"
+# riverctl map normal Super+Control K spawn layout-top
+# riverctl map normal Super+Control L spawn layout-right
+# riverctl map normal Super+Control J spawn layout-bottom 
+# riverctl map normal Super+Control H spawn layout-left
 # riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
 # riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
+
+riverctl map normal Super+Control K send-layout-cmd wideriver "--layout top"
+riverctl map normal Super+Control L send-layout-cmd wideriver "--layout right"
+riverctl map normal Super+Control J send-layout-cmd wideriver "--layout bottom"
+riverctl map normal Super+Control H send-layout-cmd wideriver "--layout left"
+riverctl map normal Super+Control M send-layout-cmd wideriver "--layout monocle"
+riverctl map normal Super+Control W send-layout-cmd wideriver "--layout wide"
 
 riverctl map normal Super+Control Space send-layout-cmd wideriver "--layout-toggle"
 
@@ -108,7 +123,6 @@ riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
-riverctl set-cursor-warp on-focus-change 
 
 # riverctl rule-add float
 # riverctl rule-add dimensions '800' '540'
@@ -140,8 +154,7 @@ do
 done
 
 exec mako &
-# wlr-randr --output HDMI-A-2 --pos -1440,0 &
-swaybg -m center -i /etc/nixos/modules/home-manager/river/simple-nix-black.png --output eDP-1 &  
-layout-left &
 wlr-randr  --output HDMI-A-2 --pos -1440,0 &
+swaybg -m center -i $HOME/.config/river/mini-nix.png &  
+layout-left &
 

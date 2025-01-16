@@ -21,26 +21,27 @@
     (import ../../../customs/pkgs/shortcuts/capture/whole.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/capture/section.nix { inherit pkgs; })
 
-    # (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
-    # (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
-    # (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
-    # (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
-
+    (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
 
     # inputs.rio.packages.x86_64-linux.default
+    # inputs.ghostty.packages.x86_64-linux.ghostty-releasefast
 
-	# wideriver
-    websocat
+    wideriver
     mosquitto
     rlwrap
+    websocat
     tree
     dconf
     unzip
+
     luajit
     luarocks
     nodejs_22
-    ntfs3g
     cargo
+    ntfs3g
     wget
     flex
     bison
@@ -135,10 +136,10 @@
     sqlite
     rpi-imager
     zip
-    dwl
+    # dwl
     cpulimit
     libsixel
-	# opentabletdriver
+    # opentabletdriver
     # kitty
     # xclip
     # inputs.pinnacle.devShell.x86_64-linux.default
@@ -146,7 +147,7 @@
 
   services.udev.packages = with pkgs; [
     saleae-logic-2
-	# opentabletdriver
+    # opentabletdriver
     # segger-jlink
     stlink
   ];

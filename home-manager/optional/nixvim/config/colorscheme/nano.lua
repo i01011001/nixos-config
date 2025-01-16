@@ -103,7 +103,7 @@ local groups = {
 
 
 	Character = { fg=colors.green},
-	Boolean = { fg=colors.red},
+	Boolean = { fg=colors.purple},
 	Constant = { fg=colors.lightgray2},
 	Define = { fg=colors.lightgray2},
 	Field = { fg=colors.cyan},
@@ -111,7 +111,7 @@ local groups = {
 	Identifier = { fg=colors.lightgray2},
 	Include =  { fg=colors.blue},
 	Macro = { fg=colors.lightgray1},
-	Number = { fg=colors.red},
+	Number = { fg=colors.purple},
 	Property = {fg = colors.lightgray2},
 	SpecialChar = {fg = colors.lightgray2},
 	String = { fg=colors.green},

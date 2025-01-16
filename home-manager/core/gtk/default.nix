@@ -9,7 +9,6 @@
     theme = {
       package = pkgs.flat-remix-gtk;
       name = "Flat-Remix-GTK-Grey-Darkest";
-
       # package = pkgs.breeze-gtk;
       # name = "Breeze-Dark";
     };
@@ -26,20 +25,19 @@
       name = "Adwaita";
     };
     gtk3 = {
-      # extraCss = builtins.readFile ./gtk.css;
-      extraConfig = {
-        gtk-dialogs-use-header = false;
-        gtk-application-prefer-dark-theme = true;
-      };
-    };
-    gtk4 = {
-      # extraCss = builtins.readFile ./gtk.css;
-
-      extraConfig = {
-        gtk-dialogs-use-header = false;
-        gtk-application-prefer-dark-theme = true;
-      };
-    };
+		extraCss = builtins.readFile ./gtk.css;
+		extraConfig = {
+			gtk-application-prefer-dark-theme = true;
+			gtk-decoration-layout = "appmenu:none" ;
+		};
+	};
+	gtk4 = {
+		extraCss = builtins.readFile ./gtk.css;
+		extraConfig = {
+			gtk-application-prefer-dark-theme = true;
+			gtk-decoration-layout = "appmenu:none" ;
+		};
+	};
 
   };
 }

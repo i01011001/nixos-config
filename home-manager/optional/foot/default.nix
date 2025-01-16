@@ -6,7 +6,7 @@
         main = {
           font = "Iosevka Nerd Font: size=10: weight=medium";
           # line-height = 13.5;
-          pad = "5x3";
+          pad = "5x2";
         };
         colors = {
           # alpha = 1;
@@ -31,9 +31,9 @@
           bright6 = "7dafac";
           bright7 = "d0d0d0";
         };
-		scrollback = {
-				lines = 4096;
-			};
+        scrollback = {
+          lines = 4096;
+        };
       };
     };
   };

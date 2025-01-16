@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   imports = [
-### core
+    ### core
     ./core/gtk
     ./core/fd
     ./core/fzf
@@ -9,7 +9,7 @@
     ./core/git
     ./core/ripgrep
 
-### optional
+    ### optional
     ./optional/direnv
     ./optional/nixvim
     ./optional/cursor
@@ -21,10 +21,11 @@
     ./optional/swappy
     ./optional/foot
     ./optional/zathura
-    # ./optional/river
-	# ./optional/alacritty
+    ./optional/river
+	# ./optional/hypr
+    # ./optional/alacritty
     # ./hypr
-    # ./ghostty
+    # ./optional/ghostty
     # ./awesome
     # ./wezterm
     # ./sway

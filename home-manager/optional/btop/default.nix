@@ -5,7 +5,7 @@
       theme_background = false;
       color_theme = "greyscale";
       vim_keys = true;
-      single_corners = true;
+      rounded_corners = false;
       update_ms = 500;
     };
   };

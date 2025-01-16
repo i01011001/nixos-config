@@ -27,7 +27,6 @@ static int log_level = WLR_ERROR;
 /* Autostart *///overlay
 static const char *const autostart[] = {
         "swaybg", "-i" ,"/etc/nixos/customs/pkgs/dwl/simple-nix-black.png", "-m", "center", NULL,
-		"wlr-randr", "--output", "HDMI-A-2", "--pos", "-1400,0", NULL,
 		"mako" ,NULL, 
         NULL /* terminate */
 };
@@ -46,6 +45,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
+	{ "C",		  tilec },
 };
 
 /* monitors */
@@ -56,8 +56,8 @@ static const Layout layouts[] = {
 /* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
 static const MonitorRule monrules[] = {
 	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
-	{ "eDP-1",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
-	{ "HDMI-A-2",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ "eDP-1",    0.55f,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
+	{ "HDMI-A-2",    0.55f,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   -1440,  -1 },
 	/* defaults */
 	// { NULL,       0.6f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
@@ -154,7 +154,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_j,          focusto,        {.i = 1} },//		
 	{ MODKEY,                    XKB_KEY_k,          focusto,        {.i = 2} },//		
 	{ MODKEY,                    XKB_KEY_l,          focusto,        {.i = 3} },//		
-	{ MODKEY,                    XKB_KEY_semicolon,  focusto,        {.i = 4} },//		
+	{ MODKEY,                    XKB_KEY_semicolon,  focusto,        {.i = -2} },//		
 	{ MODKEY,                    XKB_KEY_apostrophe, focusto,        {.i = -1} },//		
 	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_h,          swapstack,      {.i = 0} },//		
 	// { MODKEY|WLR_MODIFIER_CTRL,  XKB_KEY_j,          swapstack,      {.i = 1} },//		
@@ -179,6 +179,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                    XKB_KEY_f,			 setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                    XKB_KEY_y,          setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
 	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },

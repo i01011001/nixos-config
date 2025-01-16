@@ -34,48 +34,10 @@
         withVencord = true;
       };
 
-      new_zlib = prev.zlib.overrideAttrs (
-        oldAttrs:
-        let
-          version = "1.2.11";
-        in
-        {
-          version = "${version}";
-          src = pkgs.fetchurl {
-            url = "https://gitlab.com/sortix/libz/-/archive/v1.2.10/libz-v${version}.tar.gz";
-            sha256 = "sha256-cY7oLpeOQKnxcJstFDxfA++nrZ0IeEnE05lW2UyGVr4=";
-          };
-        }
-      );
+      mako_beta = prev.mako.overrideAttrs (oldAttrs: {
+        src = ../customs/pkgs/mako;
+      });
 
-	  mako_beta = prev.mako.overrideAttrs(
-			  oldAttrs:
-			  {
-			  src = ../customs/pkgs/mako;
-			  });
-
-      pureref2 = prev.pureref.overrideAttrs (
-        oldAttrs:
-        let
-          version = "2.0.3";
-        in
-        {
-          src =
-            pkgs.runCommand "PureRef-${version}_x64.Appimage"
-              {
-                nativeBuildInputs = with pkgs; [
-                  curl
-                  gnugrep
-                  cacert
-                ];
-                outputHash = "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=";
-              }
-              ''
-                key="$(curl -A 'nixpkgs/Please contact maintainer if there is an issue' "https://www.pureref.com/download.php" --silent | grep '%3D%3D' | cut -d '"' -f2)"
-                curl -L "https://www.pureref.com/files/build.php?build=LINUX64.Appimage&version=${version}&downloadKey=$key" --output $out
-              '';
-        }
-      );
     })
 
     (self: super: {
@@ -93,6 +55,8 @@
             ../customs/pkgs/dwl/dwl-patches/zoomswap.patch
             ../customs/pkgs/dwl/dwl-patches/swallow.patch
             ../customs/pkgs/dwl/dwl-patches/tabletinput.patch
+            ../customs/pkgs/dwl/dwl-patches/customtile.patch
+            # ../customs/pkgs/dwl/dwl-patches/monitorconfig.patch
             # ../customs/pkgs/dwl/dwl-patches/cfact.patch
           ];
         })).override
