@@ -21,7 +21,7 @@ in
 			./config/plugins/diffview
 			./config/plugins/surround
 			./config/plugins/cmp
-			./config/plugins/typr
+			# ./config/plugins/typr
 # ./config/plugins/colorizer
 # ./config/plugins/blink
 # ./config/plugins/fzf-lua
