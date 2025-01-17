@@ -155,6 +155,6 @@ done
 
 exec mako &
 wlr-randr  --output HDMI-A-2 --pos -1440,0 &
-swaybg -m center -i $HOME/.config/river/mini-nix.png &  
+swaybg -m center -i ../../../images/mini-nix.png &  
 layout-left &
 
