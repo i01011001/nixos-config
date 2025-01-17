@@ -11,7 +11,7 @@
 - **File Manager** -> [Yazi](https://github.com/sxyazi/yazi), [Thunar](https://github.com/xfce-mirror/thunar)
 - **Book Reader** -> [Zathura](https://github.com/pwmt/zathura)
 - **Image Viewer** -> [Swayimg](https://github.com/artemsen/swayimg)
-- **Notification daemon** -> [Mako](https://github.com/emersion/mako)
-- **Screenshot tool** -> [Grim](https://github.com/emersion/grim)
-- **Snapshot editor** -> [Swappy](https://github.com/jtheoof/swappy)
+- **Notification Daemon** -> [Mako](https://github.com/emersion/mako)
+- **Screenshot Tool** -> [Grim](https://github.com/emersion/grim)
+- **Snapshot Editor** -> [Swappy](https://github.com/jtheoof/swappy)
 
