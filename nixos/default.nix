@@ -27,7 +27,7 @@
     ./optional/systemPackages
     ./optional/tmux
     ./optional/wireshark
-    ./optional/opentabletdriver
+    # ./optional/opentabletdriver
     # ./optional/x11
 
   ];

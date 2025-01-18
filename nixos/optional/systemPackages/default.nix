@@ -136,9 +136,10 @@
     sqlite
     rpi-imager
     zip
-    # dwl
+    dwl
     cpulimit
     libsixel
+	qemu
     # opentabletdriver
     # kitty
     # xclip

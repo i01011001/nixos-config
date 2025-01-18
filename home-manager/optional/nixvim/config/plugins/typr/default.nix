@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
 	programs.nixvim = {
-		extraPlugins = [ pkgs.vimPlugins.typr ];
+		extraPlugins = [ 
+		pkgs.vimPlugins.nvzone-typr
+		];
 	};
 }

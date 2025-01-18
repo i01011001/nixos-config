@@ -26,7 +26,7 @@ static int log_level = WLR_ERROR;
 
 /* Autostart *///overlay
 static const char *const autostart[] = {
-        "swaybg", "-i" ,"/etc/nixos/customs/pkgs/dwl/simple-nix-black.png", "-m", "center", NULL,
+        "swaybg", "-i" ,"/etc/nixos/images/mini-nix.png", "-m", "center", NULL,
 		"mako" ,NULL, 
         NULL /* terminate */
 };

@@ -21,7 +21,7 @@ in
 			./config/plugins/diffview
 			./config/plugins/surround
 			./config/plugins/cmp
-			# ./config/plugins/typr
+			./config/plugins/typr
 # ./config/plugins/colorizer
 # ./config/plugins/blink
 # ./config/plugins/fzf-lua
@@ -82,6 +82,7 @@ in
 		#
 		# ];
 		# extraPlugins = [
+		# 	(pkgs.vimPlugins.nvzone-volt)
 		# 	(pkgs.vimUtils.buildVimPlugin {
 		# 	 name = "typr";
 		# 	 src = pkgs.fetchFromGitHub {

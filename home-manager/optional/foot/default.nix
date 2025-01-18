@@ -6,7 +6,7 @@
         main = {
           font = "Iosevka Nerd Font: size=10: weight=medium";
           # line-height = 13.5;
-          pad = "5x2";
+          pad = "5x3";
         };
         colors = {
           # alpha = 1;
