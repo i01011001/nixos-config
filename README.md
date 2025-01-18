@@ -3,7 +3,7 @@
 ![logo](./images/preview.png)
 
 #### Packages Used
-- **Compositor** -> [River](https://codeberg.org/river/river)
+- **Compositor** -> [DWL](https://codeberg.org/dwl/dwl)
 - **Browser** -> [Floorp](https://github.com/Floorp-Projects/Floorp)
 - **Terminal** -> [Foot](https://codeberg.org/dnkl/foot)
 - **Shell** -> [Zsh](https://www.zsh.org/)
