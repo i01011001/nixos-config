@@ -26,9 +26,6 @@
 
       gobject-introspection
       libgcc
-
-      cjson
-      crow
     ];
   };
 }
