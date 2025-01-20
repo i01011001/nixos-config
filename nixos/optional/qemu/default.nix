@@ -1,0 +1,5 @@
+{
+	vitaulisation.qemu = {
+			enable = true;
+		};
+	}
