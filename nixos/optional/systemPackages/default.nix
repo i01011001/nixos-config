@@ -139,7 +139,6 @@
     dwl
     cpulimit
     libsixel
-	qemu
     # opentabletdriver
     # kitty
     # xclip
