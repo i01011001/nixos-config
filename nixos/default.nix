@@ -27,7 +27,7 @@
     ./optional/systemPackages
     ./optional/tmux
     ./optional/wireshark
-	./optional/qemu
+	# ./optional/qemu
 	./optional/multipass
     # ./optional/opentabletdriver
     # ./optional/x11

@@ -29,7 +29,7 @@
     # inputs.rio.packages.x86_64-linux.default
     # inputs.ghostty.packages.x86_64-linux.ghostty-releasefast
 
-    wideriver
+    # wideriver
     mosquitto
     rlwrap
     websocat
@@ -139,6 +139,8 @@
     dwl
     cpulimit
     libsixel
+	qemu
+	sshfs
     # opentabletdriver
     # kitty
     # xclip
