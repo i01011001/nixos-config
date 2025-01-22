@@ -22,7 +22,7 @@
     ./optional/foot
     ./optional/zathura
     # ./optional/river
-	# ./optional/hypr
+    # ./optional/hypr
     # ./optional/alacritty
     # ./hypr
     # ./optional/ghostty

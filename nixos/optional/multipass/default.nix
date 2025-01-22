@@ -1,7 +1,6 @@
-
 {
-	virtualisation.multipass = {
-			enable = true;
-			logLevel = "debug";
-		};
-	}
+  virtualisation.multipass = {
+    enable = true;
+    logLevel = "debug";
+  };
+}

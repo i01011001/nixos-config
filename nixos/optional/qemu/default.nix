@@ -1,5 +1,5 @@
 {
-	virtualisation.qemu = {
-		# enable = true;
-	};
+  virtualisation.qemu = {
+    # enable = true;
+  };
 }

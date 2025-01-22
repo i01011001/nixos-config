@@ -24,7 +24,7 @@
     (import ../../../customs/pkgs/shortcuts/river/layout-top.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/river/layout-left.nix { inherit pkgs; })
     (import ../../../customs/pkgs/shortcuts/river/layout-right.nix { inherit pkgs; })
-    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix{ inherit pkgs; })
+    (import ../../../customs/pkgs/shortcuts/river/layout-bottom.nix { inherit pkgs; })
 
     # inputs.rio.packages.x86_64-linux.default
     # inputs.ghostty.packages.x86_64-linux.ghostty-releasefast
@@ -139,8 +139,8 @@
     dwl
     cpulimit
     libsixel
-	qemu
-	sshfs
+    qemu
+    sshfs
     # opentabletdriver
     # kitty
     # xclip
