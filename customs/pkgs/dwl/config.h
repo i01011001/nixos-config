@@ -45,7 +45,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "C",		  tilec },
+	// { "C",		  tilec },
 };
 
 /* monitors */
@@ -56,8 +56,8 @@ static const Layout layouts[] = {
 /* NOTE: ALWAYS add a fallback rule, even if you are completely sure it won't be used */
 static const MonitorRule monrules[] = {
 	/* name       mfact  nmaster scale layout       rotate/reflect                x    y */
-	{ "eDP-1",    0.55f,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0 },
-	{ "HDMI-A-2",    0.55f,  1,      1,    &layouts[3], WL_OUTPUT_TRANSFORM_NORMAL,   -1440,  0 },
+	{ "eDP-1",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   0,  0 },
+	{ "HDMI-A-2",    0.55f,  1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1440,  0 },
 	/* defaults */
 	// { NULL,       0.6f, 1,      1,    &layouts[0], WL_OUTPUT_TRANSFORM_NORMAL,   -1,  -1 },
 };
@@ -179,7 +179,7 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_t,          setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                    XKB_KEY_f,			 setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                    XKB_KEY_m,          setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                    XKB_KEY_y,          setlayout,      {.v = &layouts[3]} },
+	// { MODKEY,                    XKB_KEY_y,          setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                    XKB_KEY_space,      setlayout,      {0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_space,      togglefloating, {0} },
 	{ MODKEY,                    XKB_KEY_e,         togglefullscreen, {0} },

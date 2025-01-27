@@ -31,6 +31,7 @@
       "*.a"
       "*.ld"
       "*.log"
+	  "managed_components"
 
       # Build directories
       "/build/"

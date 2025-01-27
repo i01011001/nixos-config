@@ -26,11 +26,6 @@
 
       gobject-introspection
       libgcc
-
-      linuxHeaders
-
-      linux
-
     ];
   };
 }

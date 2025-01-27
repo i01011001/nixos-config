@@ -27,6 +27,8 @@
     ./optional/systemPackages
     ./optional/tmux
     ./optional/wireshark
+	./optional/steam
+	./optional/docker
     # ./optional/qemu
     ./optional/multipass
     # ./optional/opentabletdriver

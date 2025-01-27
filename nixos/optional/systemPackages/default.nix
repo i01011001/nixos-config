@@ -140,6 +140,7 @@
     cpulimit
     libsixel
     qemu
+	nmap
     sshfs
     # opentabletdriver
     # kitty

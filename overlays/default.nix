@@ -55,7 +55,7 @@
             ../customs/pkgs/dwl/dwl-patches/zoomswap.patch
             ../customs/pkgs/dwl/dwl-patches/swallow.patch
             ../customs/pkgs/dwl/dwl-patches/tabletinput.patch
-            ../customs/pkgs/dwl/dwl-patches/customtile.patch
+            # ../customs/pkgs/dwl/dwl-patches/customtile.patch
             # ../customs/pkgs/dwl/dwl-patches/monitorconfig.patch
             # ../customs/pkgs/dwl/dwl-patches/cfact.patch
           ];
